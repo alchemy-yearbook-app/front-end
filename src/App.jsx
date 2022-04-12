@@ -9,6 +9,7 @@ import Memorybook from './views/Memorybook/Memorybook';
 import About from './views/About/About';
 import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
 import YearCreateEdit from './views/YearCreateEdit/YearCreateEdit';
+import Auth from './views/Auth/Auth';
 
 function App() {
   return (
