@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './views/Home/Home';
 import Advice from './views/Advice/Advice';
 import Yearbook from './views/Yearbook/Yearbook';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           <Yearbook />
         </Route>
         <Route path="/yearbook/create">
+          <Yearbook />
+        </Route>
+        <Route path="/yearbook/:id/edit">
           <Yearbook />
         </Route>
       </Switch>
