@@ -30,7 +30,7 @@ function App() {
           <Yearbook />
         </Route>
         <PrivateRoute exact path="/yearbook/create">
-          <Yearbook />
+          <YearCreateEdit />
         </PrivateRoute>
         <PrivateRoute exact path="/yearbook/:id/edit">
           <YearCreateEdit isEditing />
