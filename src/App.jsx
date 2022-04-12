@@ -1,6 +1,18 @@
 import './App.css'; /* Global CSS */
 import styles from './App.module.css'; /* CSS Modules */
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './views/Home/Home';
 
-export default function App() {
-  return <div>Hello Worldlings</div>;
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
+
+export default App;
