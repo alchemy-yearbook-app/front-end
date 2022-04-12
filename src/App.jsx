@@ -7,8 +7,8 @@ import Yearbook from './views/Yearbook/Yearbook';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Memorybook from './views/Memorybook/Memorybook';
 import About from './views/About/About';
-import MemCreateEdit from './components/MemCreateEdit/MemCreateEdit';
-import YearCreateEdit from './components/YearCreateEdit/YearCreateEdit';
+import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
+import YearCreateEdit from './views/YearCreateEdit/YearCreateEdit';
 
 function App() {
   return (
