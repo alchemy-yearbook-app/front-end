@@ -5,6 +5,10 @@ import Home from './views/Home/Home';
 import Advice from './views/Advice/Advice';
 import Yearbook from './views/Yearbook/Yearbook';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Memorybook from './views/Memorybook/Memorybook';
+import About from './views/About/About';
+import MemCreateEdit from './components/MemCreateEdit/MemCreateEdit';
+import YearCreateEdit from './components/YearCreateEdit/YearCreateEdit';
 
 function App() {
   return (
@@ -13,23 +17,35 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/advice">
+        <Route exact path="/advice">
           <Advice />
         </Route>
-        <Route path="/sign-in">
+        <Route exact path="/sign-in">
           <Auth />
         </Route>
-        <Route path="/sign-up">
+        <Route exact path="/sign-up">
           <Auth isSigningUp />
         </Route>
-        <Route path="/yearbook">
+        <Route exact path="/yearbook">
           <Yearbook />
         </Route>
-        <Route path="/yearbook/create">
-          <Yearbook />
-        </Route>
-        <Route path="/yearbook/:id/edit">
-          <Yearbook />
+        <PrivateRoute exact path="/yearbook/create">
+          <YearCreateEdit />
+        </PrivateRoute>
+        <PrivateRoute exact path="/yearbook/:id/edit">
+          <YearCreateEdit isEditing />
+        </PrivateRoute>
+        <PrivateRoute exact path="/memorybook">
+          <Memorybook />
+        </PrivateRoute>
+        <PrivateRoute exact path="/memorybook/create">
+          <MemCreateEdit />
+        </PrivateRoute>
+        <PrivateRoute exact path="/memorybook/:id/edit">
+          <MemCreateEdit isEditing />
+        </PrivateRoute>
+        <Route exact path="/about">
+          <About />
         </Route>
       </Switch>
     </Router>
