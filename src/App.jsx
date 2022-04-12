@@ -38,10 +38,10 @@ function App() {
         <PrivateRoute exact path="/memorybook">
           <Memorybook />
         </PrivateRoute>
-        <PrivateRoute exact path="/Memorybook/create">
+        <PrivateRoute exact path="/memorybook/create">
           <MemCreateEdit />
         </PrivateRoute>
-        <PrivateRoute exact path="/Memorybook/:id/edit">
+        <PrivateRoute exact path="/memorybook/:id/edit">
           <MemCreateEdit isEditing />
         </PrivateRoute>
         <Route exact path="/about">
