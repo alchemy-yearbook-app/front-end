@@ -5,22 +5,22 @@ export default function About() {
     <div className="w-full h-full min-h-screen">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-center pb-12">
-          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-pink">
+          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-teal">
             Check out our awesome team members
           </h1>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="w-full bg-darkteal rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
             <div
               className="w-full md:w-2/5 h-80 bg-kevin bg-center bg-cover"
               alt="photo"
             ></div>
             <div className="w-full md:w-3/5 text-left p-4 md:p-4 space-y-2">
-              <p className="text-xl text-white font-bold">Kevin Do</p>
-              <p className="text-base text-darkpurple font-normal">
+              <p className="text-xl text-darkpurple font-bold">Kevin Do</p>
+              <p className="text-base text-purple font-normal">
                 Software Developer
               </p>
-              <p className="text-base leading-relaxed text-darkpurple font-normal">
+              <p className="text-base leading-relaxed text-purple font-normal">
                 I am a full stack software developer with backgrounds in
                 pharmacy and photography. Utilizing my patient-oriented
                 experiences and my aesthetic-based hobbies, I strive to create
@@ -30,7 +30,7 @@ export default function About() {
               <div className="flex justify-start space-x-2">
                 <a
                   href="https://github.com/kevindo1"
-                  className="text-pink hover:text-teal"
+                  className="text-teal hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -47,7 +47,7 @@ export default function About() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/kdo/"
-                  className="text-pink hover:text-teal"
+                  className="text-teal hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -61,23 +61,25 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="w-full bg-darkteal rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
             <div
               className="w-full md:w-2/5 h-80 bg-indy bg-center bg-cover"
               alt="photo"
             ></div>
             <div className="w-full md:w-3/5 text-left p-6 md:p-4 space-y-2">
-              <p className="text-xl text-white font-bold">Indy Holdsworth</p>
-              <p className="text-base text-darkpurple font-normal">
+              <p className="text-xl text-darkpurple font-bold">
+                Indy Holdsworth
+              </p>
+              <p className="text-base text-purple font-normal">
                 Software Developer
               </p>
-              <p className="text-base leading-relaxed text-darkpurple font-normal">
+              <p className="text-base leading-relaxed text-purple font-normal">
                 Full-Stack Software Developer and avid organizer
               </p>
               <div className="flex justify-start space-x-2">
                 <a
                   href="https://github.com/H-Indiana-Holdsworth"
-                  className="text-pink hover:text-teal"
+                  className="text-teal hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -94,7 +96,7 @@ export default function About() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/h-indiana-holdsworth/"
-                  className="text-pink hover:text-teal"
+                  className="text-teal hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -108,17 +110,19 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="w-full bg-darkteal rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
             <div
               className="w-full md:w-2/5 h-80 bg-mira bg-center bg-cover"
               alt="photo"
             ></div>
             <div className="w-full md:w-3/5 text-left p-4 md:p-4 space-y-2">
-              <p className="text-xl text-white font-bold">Mira Kinebuchi</p>
-              <p className="text-base text-darkpurple font-normal">
+              <p className="text-xl text-darkpurple font-bold">
+                Mira Kinebuchi
+              </p>
+              <p className="text-base text-purple font-normal">
                 Software Developer
               </p>
-              <p className="text-base leading-relaxed text-darkpurple font-normal">
+              <p className="text-base leading-relaxed text-purple font-normal">
                 I am a full stack software developer who puts user experience
                 and interaction in the forefront of my mind. I am passionate
                 about the intersectionality of mental health and tech, and
@@ -127,7 +131,7 @@ export default function About() {
               <div className="flex justify-start space-x-2">
                 <a
                   href="https://github.com/mira-kine"
-                  className="text-pink hover:text-teal"
+                  className="text-teal hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -144,7 +148,7 @@ export default function About() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/mira-kinebuchi/"
-                  className="text-pink hover:text-teal"
+                  className="text-teal hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -158,24 +162,24 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="w-full bg-darkteal rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
             <div
               className="w-full md:w-2/5 h-80 bg-mark bg-center bg-cover"
               alt="photo"
             ></div>
             <div className="w-full md:w-3/5 text-left p-4 md:p-4 space-y-2">
-              <p className="text-xl text-white font-bold">Mark Voltaire</p>
-              <p className="text-base text-darkpurple font-normal">
+              <p className="text-xl text-darkpurple font-bold">Mark Voltaire</p>
+              <p className="text-base text-purple font-normal">
                 Software Developer
               </p>
-              <p className="text-base leading-relaxed text-darkpurple font-normal">
+              <p className="text-base leading-relaxed text-purple font-normal">
                 I am a full stack software developer that likes to apply my
                 skills to learn and create things I love!
               </p>
               <div className="flex justify-start space-x-2">
                 <a
                   href="https://github.com/markjvoltaire"
-                  className="text-pink hover:text-teal"
+                  className="text-teal hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -192,7 +196,7 @@ export default function About() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/mark-voltaire/"
-                  className="text-pink hover:text-teal"
+                  className="text-teal hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
