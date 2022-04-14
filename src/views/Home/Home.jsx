@@ -39,7 +39,7 @@ export default function Home() {
           />
           <div className="bg-gray absolute inset-0 mt-16 -ml-8"></div>
           <svg
-            className="relative z-20 pt-8 -ml-16 opacity-70"
+            className="relative z-20 pt-8 -ml-16 opacity-80"
             xmlns="http://www.w3.org/2000/svg"
             data-name="Capa 1"
             viewBox="0 0 428.29 298.11"
