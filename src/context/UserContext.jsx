@@ -1,27 +1,27 @@
-import { createContext, useContext, useMemo, useState } from 'react';
-import { getUser } from '../services/users';
+// import { createContext, useContext, useMemo, useState } from 'react';
+// import { getUser } from '../services/users';
 
-const UserContext = createContext();
+// const UserContext = createContext();
 
-const UserProvider = ({ children }) => {
-  const currentUser = getUser();
-  const [user, setUser] = useState(
-    currentUser ? { id: currentUser.id, email: currentUser.email } : {}
-  );
+// const UserProvider = ({ children }) => {
+//   const currentUser = getUser();
+//   const [user, setUser] = useState(
+//     currentUser ? { id: currentUser.id, email: currentUser.email } : {}
+//   );
 
-  const value = useMemo(() => ({ user, setUser }), [user]);
+//   const value = useMemo(() => ({ user, setUser }), [user]);
 
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
-};
+//   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+// };
 
-const useUser = () => {
-  const context = useContext(UserContext);
+// const useUser = () => {
+//   const context = useContext(UserContext);
 
-  if (context === undefined) {
-    throw new Error('useUser must be used within a UserProvider');
-  }
+//   if (context === undefined) {
+//     throw new Error('useUser must be used within a UserProvider');
+//   }
 
-  return context;
-};
+//   return context;
+// };
 
-export { UserContext, UserProvider, useUser };
+// export { UserContext, UserProvider, useUser };

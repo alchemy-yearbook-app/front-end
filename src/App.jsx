@@ -10,9 +10,11 @@ import About from './views/About/About';
 import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
 import YearCreateEdit from './views/YearCreateEdit/YearCreateEdit';
 import Auth from './views/Auth/Auth';
+// import { UserProvider } from './context/UserContext';
 
 function App() {
   return (
+    // <UserProvider>
     <Router>
       <Switch>
         <Route exact path="/">
@@ -50,6 +52,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    // </UserProvider>
   );
 }
 
