@@ -1,37 +1,37 @@
-import React from 'react';
-// import { useUser } from '../../context/UserContext/UserContext';
-import AuthForm from '../../components/Authform/AuthForm';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-// import { signUpUser, signInUser } from '../../services/users';
+import { useAuth, useCurrentUser } from '../../context/UserContext';
 
-export default function Auth() {
-  // const { setUser } = useUser();
-  // const history = useHistory();
+export default function Authenticate() {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const history = useHistory();
+  const user = useCurrentUser();
+  const { login } = useAuth();
 
-  // const handleAuth = async (email, password) => {
-  //   try {
-  //     // if you are signing up, use signUp services function and push to confirm email
-  //     if (isSigningUp) {
-  //       await signUpUser(email, password);
-  //       history.replace('/sign-in');
-  //     } else {
-  //       // signing in, set the current user with the API call response.
-  //       const resp = await signInUser(email, password);
-  //       setUser({ id: resp.id, email: resp.email });
-  //       // history.replace because you don't want to go back to log in page after you logged in, sends user to the yearbook
-  //       history.replace('/yearbook');
-  //     }
-  //   } catch (error) {
-  //     throw error;
-  //   }
-  // };
+  useEffect(() => {
+    if (user?.username) history.replace('/dashboard');
+  }, []);
+
+  const handleSubmit = async (event) => {
+    try {
+      event.preventDefault();
+      await login({ username, password });
+      history.replace('/dashboard');
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     <>
       <div className="bg-darkpurple text-white h-screen w-full">
         <AuthForm
-        // onSubmit={handleAuth}
-        // label={isSigningUp ? 'Sign Up' : 'Sign In'}
-        // isSigningUp={isSigningUp}
+          onSubmit={handleSubmit}
+          setUsername={setUsername}
+          email={email}
+          setEmail={setEmail}
         />
       </div>
     </>
