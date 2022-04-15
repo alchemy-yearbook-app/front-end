@@ -15,7 +15,7 @@ export default function Home() {
       </header>
       <div className="container mx-auto px-6 sm:px-12 lg:py-6 xl:py-16 relative flex flex-col sm:flex-row">
         <div className="sm:w-1/2 sm:pt-8 lg:pt-16 pb-8 sm:pb-16 lg:pb-32 relative z-30">
-          <h2 className="uppercase text-black font-bold tracking-wider text-2xl text-shadow text-shadow-xl">
+          <h2 className="uppercase text-black font-bold tracking-wider text-2xl">
             Alchemy Code Lab
           </h2>
           <h1 className="uppercase font-black leading-none tracking-wider mt-4 text-5xl lg:text-6xl xl:text-8xl">
@@ -27,16 +27,21 @@ export default function Home() {
           <p className="text-gray font-roboto text-lg sm:w-2/3 lg:w-1/2">
             Where software developers are built and memories are made
           </p>
+          <div className="mt-12 absolute">
+            <a
+              href="/yearbook"
+              className="border-black border-8 text-4xl font-bold p-4 hover:text-white hover:border-white"
+            >
+              ENTER
+            </a>
+          </div>
         </div>
-        <div className="sm:w-1/2 lg:w-2/3 relative sm:absolute bottom-0 right-0 bg-gray">
+        <div className="sm:w-1/2 lg:w-2/3 relative sm:absolute bottom-0 right-0">
           <h3 className="monteserrat font-black text-white absolute top-0 left-0 mt-32 sm:mt-32 lg:mt-56 ml-0 lg:ml-12 z-30 text-xl sm:text-3xl lg:text-4xl xl:text-5xl transform rotate-90"></h3>
           <div className="left-0 bottom-0 w-full h-16 absolute z-30 flex items-center justify-center mb-12 lg:mb-24 xl:mb-32">
             <span className="bg-black text-white uppercase font-black xl:text-2xl py-2 px-6 rounded-full"></span>
           </div>
-          <img
-            className="absolute left-0 right-0 w-full h-full object-cover z-10 mt-16"
-            src="https://i.ibb.co/5YXzwrM/Screen-Shot-2022-04-14-at-12-41-47-PM.png"
-          />
+          <div className="bg-home bg-cover absolute left-0 right-0 w-full h-full object-cover z-10 mt-16"></div>
           <div className="bg-gray absolute inset-0 mt-16 -ml-8"></div>
           <svg
             className="relative z-20 pt-8 -ml-16 opacity-80"

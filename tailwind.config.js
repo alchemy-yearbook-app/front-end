@@ -7,6 +7,7 @@ module.exports = {
         kevin: "url('/public/assets/kevin.jpeg')",
         mira: "url('/public/assets/mira.jpeg')",
         mark: "url('/public/assets/mark.jpeg')",
+        home: "url('/public/assets/home.png')",
       },
     },
     colors: {
@@ -17,6 +18,7 @@ module.exports = {
       teal: '#a3e4e5',
       white: '#fff',
       grey: '#808080',
+      black: '#000',
     },
   },
   plugins: [],
