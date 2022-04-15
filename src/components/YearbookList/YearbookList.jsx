@@ -7,10 +7,10 @@ export default function YearbookList() {
         <dh-component>
           <div className="container flex justify-center mx-auto pt-16">
             <div>
-              <p className="text-darkteal text-lg text-center font-bold pb-3 uppercase">
+              <p className="text-black text-lg text-center font-bold pb-3 uppercase">
                 Alchemy Code Lab
               </p>
-              <h1 className="xl:text-5xl text-4xl text-center text-gray-800 font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto">
+              <h1 className="xl:text-5xl text-4xl text-center text-black font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto">
                 September 2021
               </h1>
             </div>
@@ -19,7 +19,7 @@ export default function YearbookList() {
             <div className="container mx-auto">
               <div
                 role="list"
-                aria-label="Behind the scenes People "
+                aria-label=""
                 className="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around"
               >
                 <div
