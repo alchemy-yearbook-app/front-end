@@ -11,13 +11,12 @@ export const getCurrentUser = async () => {
   }
 };
 
-export const signIn = async ({ username, email }) => {
-  const res = await fetch(`${process.env.API_URL}/api/v1/user`, {
+export const signIn = async () => {
+  const res = await fetch(`${process.env.API_URL}/api/v1/github/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
     mode: 'cors',
-    body: JSON.stringify({ username, email }),
   });
 
   if (!res.ok)
