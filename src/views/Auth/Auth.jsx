@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuth, useCurrentUser } from '../../context/UserContext';
+import AuthForm from '../../components/AuthForm/AuthForm';
 
 export default function Authenticate() {
   const [username, setUsername] = useState('');
@@ -18,7 +19,7 @@ export default function Authenticate() {
     try {
       event.preventDefault();
       await login({ username, password });
-      history.replace('/dashboard');
+      history.replace('/yearbook');
     } catch (err) {
       setError(err.message);
     }
@@ -28,7 +29,7 @@ export default function Authenticate() {
     <>
       <div className="bg-darkpurple text-white h-screen w-full">
         <AuthForm
-          onSubmit={handleSubmit}
+          handleSubmit={handleSubmit}
           setUsername={setUsername}
           email={email}
           setEmail={setEmail}

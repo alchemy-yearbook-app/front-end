@@ -10,49 +10,49 @@ import About from './views/About/About';
 import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
 import YearCreateEdit from './views/YearCreateEdit/YearCreateEdit';
 import Auth from './views/Auth/Auth';
-// import { UserProvider } from './context/UserContext';
+import { UserProvider } from './context/UserContext';
 
 function App() {
   return (
-    // <UserProvider>
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/advice">
-          <Advice />
-        </Route>
-        <Route exact path="/sign-in">
-          <Auth />
-        </Route>
-        <Route exact path="/sign-up">
-          <Auth isSigningUp />
-        </Route>
-        <Route exact path="/yearbook">
-          <Yearbook />
-        </Route>
-        <PrivateRoute exact path="/yearbook/create">
-          <YearCreateEdit />
-        </PrivateRoute>
-        <PrivateRoute exact path="/yearbook/:id/edit">
-          <YearCreateEdit isEditing />
-        </PrivateRoute>
-        <PrivateRoute exact path="/memorybook">
-          <Memorybook />
-        </PrivateRoute>
-        <PrivateRoute exact path="/memorybook/create">
-          <MemCreateEdit />
-        </PrivateRoute>
-        <PrivateRoute exact path="/memorybook/:id/edit">
-          <MemCreateEdit isEditing />
-        </PrivateRoute>
-        <Route exact path="/about">
-          <About />
-        </Route>
-      </Switch>
-    </Router>
-    // </UserProvider>
+    <UserProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/advice">
+            <Advice />
+          </Route>
+          <Route exact path="/sign-in">
+            <Auth />
+          </Route>
+          <Route exact path="/sign-up">
+            <Auth isSigningUp />
+          </Route>
+          <Route exact path="/yearbook">
+            <Yearbook />
+          </Route>
+          <PrivateRoute exact path="/yearbook/create">
+            <YearCreateEdit />
+          </PrivateRoute>
+          <PrivateRoute exact path="/yearbook/:id/edit">
+            <YearCreateEdit isEditing />
+          </PrivateRoute>
+          <PrivateRoute exact path="/memorybook">
+            <Memorybook />
+          </PrivateRoute>
+          <PrivateRoute exact path="/memorybook/create">
+            <MemCreateEdit />
+          </PrivateRoute>
+          <PrivateRoute exact path="/memorybook/:id/edit">
+            <MemCreateEdit isEditing />
+          </PrivateRoute>
+          <Route exact path="/about">
+            <About />
+          </Route>
+        </Switch>
+      </Router>
+    </UserProvider>
   );
 }
 

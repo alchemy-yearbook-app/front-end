@@ -2,27 +2,7 @@ import { useForm } from '../../hooks/useForm';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 // form will be used for both register and login, depending on
-export default function AuthForm({ onSubmit, label, isSigningUp }) {
-  const { formState, handleForm, setFormError } = useForm({
-    email: '',
-    password: '',
-  });
-  const [loading, setLoading] = useState(false);
-  // onSubmit is the handleAuth from Auth.js, API call will depend on
-  // which type of form it is (sign in or sign up)
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const { email, password } = formState;
-    try {
-      setLoading(true);
-      await onSubmit(email, password);
-    } catch (error) {
-      throw error;
-    } finally {
-      setLoading(false);
-    }
-  };
-
+export default function AuthForm({ email, setEmail, user, setUser }) {
   return (
     <>
       <div>
