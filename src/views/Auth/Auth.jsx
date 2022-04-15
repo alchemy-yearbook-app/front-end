@@ -18,8 +18,7 @@ export default function Authenticate() {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      await login({ username, password });
-      history.replace('/yearbook');
+      await login({ username, email });
     } catch (err) {
       setError(err.message);
     }
@@ -28,12 +27,10 @@ export default function Authenticate() {
   return (
     <>
       <div className="bg-darkpurple text-white h-screen w-full">
-        <AuthForm
-          handleSubmit={handleSubmit}
-          setUsername={setUsername}
-          email={email}
-          setEmail={setEmail}
-        />
+        <a href="/yearbook" className="text-lg text-center font-bold">
+          Back
+        </a>
+        <AuthForm handleSubmit={handleSubmit} />
       </div>
     </>
   );
