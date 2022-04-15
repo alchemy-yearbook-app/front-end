@@ -7,7 +7,7 @@ export default function YearbookList() {
         <dh-component>
           <div className="container flex justify-center mx-auto pt-16">
             <div>
-              <p className="text-gray-500 text-lg text-center font-bold pb-3 uppercase">
+              <p className="text-darkteal text-lg text-center font-bold pb-3 uppercase">
                 Alchemy Code Lab
               </p>
               <h1 className="xl:text-5xl text-4xl text-center text-gray-800 font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto">
