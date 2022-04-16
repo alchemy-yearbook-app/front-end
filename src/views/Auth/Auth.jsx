@@ -1,28 +1,31 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useAuth, useCurrentUser } from '../../context/UserContext';
+import { useCurrentUser } from '../../context/UserContext';
 import AuthForm from '../../components/AuthForm/AuthForm';
+import { signIn } from '../../services/users';
 
 export default function Authenticate() {
-  const [username, setUsername] = useState('');
+  const [setUsername] = useState();
   const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
   const history = useHistory();
   const user = useCurrentUser();
-  const { login } = useAuth();
+  // const { login } = useAuth();
 
   useEffect(() => {
     if (user?.username) history.replace('/dashboard');
   }, []);
 
-  const handleSubmit = async (event) => {
-    try {
-      event.preventDefault();
-      await login({ username, email });
-    } catch (err) {
-      setError(err.message);
-    }
-  };
+  // const handleSubmit = async (event) => {
+  //   try {
+  //     // event.preventDefault();
+  //     // await login({ username, email });
+  //     const user = await signIn();
+  //     setUsername(user);
+  //   } catch (err) {
+  //     throw err;
+  //   }
+  // };
 
   return (
     <>
@@ -30,7 +33,11 @@ export default function Authenticate() {
         <a href="/yearbook" className="text-lg text-center font-bold">
           Back
         </a>
-        <AuthForm handleSubmit={handleSubmit} />
+
+        <a href="http://localhost:7890/api/v1/github/login">
+          Login with github
+        </a>
+        {/* <AuthForm handleSubmit={handleSubmit} /> */}
       </div>
     </>
   );
