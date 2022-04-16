@@ -12,6 +12,7 @@ export default function YearbookList() {
       setUser(data);
       setLoading(false);
       console.log('data', data);
+      console.log('user', user);
     };
     fetchData();
   }, []);
