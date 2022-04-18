@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './views/Home/Home';
 import Advice from './views/Advice/Advice';
 import Yearbook from './views/Yearbook/Yearbook';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Memorybook from './views/Memorybook/Memorybook';
+// import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+// import Memorybook from './views/Memorybook/Memorybook';
 import About from './views/About/About';
-import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
-import YearCreateEdit from './views/YearCreateEdit/YearCreateEdit';
+// import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
+// import YearCreateEdit from './views/YearCreateEdit/YearCreateEdit';
 import Auth from './views/Auth/Auth';
 import { UserProvider } from './context/UserContext';
 
@@ -32,13 +32,13 @@ function App() {
           <Route exact path="/yearbook">
             <Yearbook />
           </Route>
-          <PrivateRoute exact path="/yearbook/create">
+          {/* <PrivateRoute exact path="/yearbook/create">
             <YearCreateEdit />
-          </PrivateRoute>
-          <PrivateRoute exact path="/yearbook/:id/edit">
+          </PrivateRoute> */}
+          {/* <PrivateRoute exact path="/yearbook/:id/edit">
             <YearCreateEdit isEditing />
-          </PrivateRoute>
-          <PrivateRoute exact path="/memorybook">
+          </PrivateRoute> */}
+          {/* <PrivateRoute exact path="/memorybook">
             <Memorybook />
           </PrivateRoute>
           <PrivateRoute exact path="/memorybook/create">
@@ -46,7 +46,7 @@ function App() {
           </PrivateRoute>
           <PrivateRoute exact path="/memorybook/:id/edit">
             <MemCreateEdit isEditing />
-          </PrivateRoute>
+          </PrivateRoute> */}
           <Route exact path="/about">
             <About />
           </Route>
