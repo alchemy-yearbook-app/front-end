@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function YearbookCard({ user }) {
+  // const [loading, setLoading] = useState(false);
+
+  // if (loading) {
+  //   <h3>loading..</h3>;
+  // }
+
   return (
     <>
       {user.map((item) => (
@@ -10,7 +16,7 @@ export default function YearbookCard({ user }) {
               <div className="h-32 w-32">
                 <img
                   src={item.avatar}
-                  alt="Display Picture of Kevin Do"
+                  alt="Display Picture"
                   role="img"
                   className="rounded-full object-cover h-full w-full shadow-xl"
                 />

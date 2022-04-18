@@ -1,24 +1,64 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { fetchGithubTeams } from '../../services/yearbook';
+import { fetchGithubUser } from '../../services/github';
 import YearbookCard from '../YearbookCard/YearbookCard';
 
 export default function YearbookList() {
+  const [cohort, setCohort] = useState([]);
   const [user, setUser] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchGithubTeams();
+      setCohort(data);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchGithubUser();
+      console.log('data', data);
       setUser(data);
       setLoading(false);
     };
     fetchData();
   }, []);
 
+  console.log('user', user);
+
   return (
     <div>
-      <YearbookCard user={user} />
+      <div>
+        {cohort.map((item) => (
+          <div key={item.id}>
+            <div className="font-bold text-4xl uppercase text-center">
+              {item.name}
+            </div>
+            <div className="w-full bg-gray-100 px-10 pt-10">
+              <div className="container mx-auto">
+                <div
+                  role="list"
+                  aria-label=""
+                  className="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around"
+                >
+                  <div
+                    role="listitem"
+                    className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5"
+                  >
+                    <YearbookCard user={user} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* <YearbookCard user={user} /> */}
       <div>
         {/* <div className="rounded overflow-hidden shadow-2xl bg-white">
           <div className="absolute -mt-20 w-full flex justify-center">
