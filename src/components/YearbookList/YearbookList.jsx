@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { fetchGithubTeams } from '../../services/yearbook';
+import YearbookCard from '../YearbookCard/YearbookCard';
 
 export default function YearbookList() {
   const [user, setUser] = useState([]);
@@ -11,16 +12,15 @@ export default function YearbookList() {
       const data = await fetchGithubTeams();
       setUser(data);
       setLoading(false);
-      console.log('data', data);
-      console.log('user', user);
     };
     fetchData();
   }, []);
 
   return (
     <div>
-      <div className="mb-16">
-        <div className="rounded overflow-hidden shadow-2xl bg-white">
+      <YearbookCard user={user} />
+      <div>
+        {/* <div className="rounded overflow-hidden shadow-2xl bg-white">
           <div className="absolute -mt-20 w-full flex justify-center">
             <div className="h-32 w-32">
               <img
@@ -94,7 +94,7 @@ export default function YearbookList() {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* <dh-component>
           <div className="container flex justify-center mx-auto pt-16">
             <div>
