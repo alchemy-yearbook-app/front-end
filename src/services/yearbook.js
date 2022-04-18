@@ -4,6 +4,5 @@ export async function fetchGithubTeams() {
     'http://localhost:7890/api/v1/profile'
   );
   const data = await resp.json();
-  console.log('data', data);
   return data;
 }
