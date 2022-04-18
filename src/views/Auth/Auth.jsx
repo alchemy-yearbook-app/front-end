@@ -1,38 +1,43 @@
-import React from 'react';
-// import { useUser } from '../../context/UserContext/UserContext';
-import AuthForm from '../../components/Authform/AuthForm';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-// import { signUpUser, signInUser } from '../../services/users';
+import { useCurrentUser } from '../../context/UserContext';
+import AuthForm from '../../components/AuthForm/AuthForm';
+import { signIn } from '../../services/users';
 
-export default function Auth() {
-  // const { setUser } = useUser();
-  // const history = useHistory();
+export default function Authenticate() {
+  const [setUsername] = useState();
+  const [email, setEmail] = useState('');
+  // const [error, setError] = useState('');
+  const history = useHistory();
+  const user = useCurrentUser();
+  // const { login } = useAuth();
 
-  // const handleAuth = async (email, password) => {
+  useEffect(() => {
+    if (user?.username) history.replace('/dashboard');
+  }, []);
+
+  // const handleSubmit = async (event) => {
   //   try {
-  //     // if you are signing up, use signUp services function and push to confirm email
-  //     if (isSigningUp) {
-  //       await signUpUser(email, password);
-  //       history.replace('/sign-in');
-  //     } else {
-  //       // signing in, set the current user with the API call response.
-  //       const resp = await signInUser(email, password);
-  //       setUser({ id: resp.id, email: resp.email });
-  //       // history.replace because you don't want to go back to log in page after you logged in, sends user to the yearbook
-  //       history.replace('/yearbook');
-  //     }
-  //   } catch (error) {
-  //     throw error;
+  //     // event.preventDefault();
+  //     // await login({ username, email });
+  //     const user = await signIn();
+  //     setUsername(user);
+  //   } catch (err) {
+  //     throw err;
   //   }
   // };
+
   return (
     <>
       <div className="bg-darkpurple text-white h-screen w-full">
-        <AuthForm
-        // onSubmit={handleAuth}
-        // label={isSigningUp ? 'Sign Up' : 'Sign In'}
-        // isSigningUp={isSigningUp}
-        />
+        <a href="/yearbook" className="text-lg text-center font-bold">
+          Back
+        </a>
+
+        <a href="http://localhost:7890/api/v1/github/login">
+          Login with github
+        </a>
+        {/* <AuthForm handleSubmit={handleSubmit} /> */}
       </div>
     </>
   );
