@@ -1,24 +1,51 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { fetchGithubTeams } from '../../services/yearbook';
+import { fetchGithubUser } from '../../services/github';
 import YearbookCard from '../YearbookCard/YearbookCard';
 
 export default function YearbookList() {
+  const [cohort, setCohort] = useState([]);
   const [user, setUser] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchGithubTeams();
+      setCohort(data);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchGithubUser();
+      console.log('data', data);
       setUser(data);
       setLoading(false);
     };
     fetchData();
   }, []);
 
+  console.log('user', user);
+
   return (
     <div>
-      <YearbookCard user={user} />
+      <div>
+        {cohort.map((item) => (
+          <div key={item.id}>
+            <div className="font-bold text-4xl uppercase text-center">
+              {item.name}
+            </div>
+            <div>
+              <YearbookCard user={user} />
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* <YearbookCard user={user} /> */}
       <div>
         {/* <div className="rounded overflow-hidden shadow-2xl bg-white">
           <div className="absolute -mt-20 w-full flex justify-center">
