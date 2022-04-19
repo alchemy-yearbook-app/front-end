@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import AuthForm from '../../components/AuthForm/AuthForm';
+import { loginWithGitHub } from '../../services/auth';
 // import { signIn } from '../../services/users';
 
 export default function Authenticate() {
