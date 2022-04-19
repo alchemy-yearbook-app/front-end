@@ -1,4 +1,4 @@
-export const getProfile = async (user_id) => {
+export const getProfileById = async (user_id) => {
   try {
     const res = await fetch(
       `${process.env.API_URL}/api/v1/profile/${user_id}`,
@@ -21,6 +21,7 @@ export const createProfile = async ({
   avatar,
   first_name,
   last_name,
+  pronouns,
   linked_in,
   github,
   quote,
@@ -36,6 +37,7 @@ export const createProfile = async ({
       avatar,
       first_name,
       last_name,
+      pronouns,
       linked_in,
       github,
       quote,
