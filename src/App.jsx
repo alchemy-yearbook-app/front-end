@@ -8,7 +8,7 @@ import Yearbook from './views/Yearbook/Yearbook';
 // import Memorybook from './views/Memorybook/Memorybook';
 import About from './views/About/About';
 // import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
-// import YearCreateEdit from './views/YearCreateEdit/YearCreateEdit';
+import YearCreateEdit from './views/YearCreateEdit/YearCreateEdit';
 import Auth from './views/Auth/Auth';
 import { UserProvider } from './context/UserContext';
 
@@ -32,9 +32,9 @@ function App() {
           <Route exact path="/yearbook">
             <Yearbook />
           </Route>
-          {/* <PrivateRoute exact path="/yearbook/create">
+          <Route exact path="/yearbook/create">
             <YearCreateEdit />
-          </PrivateRoute> */}
+          </Route>
           {/* <PrivateRoute exact path="/yearbook/:id/edit">
             <YearCreateEdit isEditing />
           </PrivateRoute> */}
