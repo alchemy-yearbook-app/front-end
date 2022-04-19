@@ -12,9 +12,9 @@ export default function Authenticate() {
   const user = useCurrentUser();
   // const { login } = useAuth();
 
-  useEffect(() => {
-    if (user?.username) history.replace('/dashboard');
-  }, []);
+  // useEffect(() => {
+  //   if (user?.username) history.replace('/dashboard');
+  // }, []);
 
   // const handleSubmit = async (event) => {
   //   try {
@@ -27,12 +27,21 @@ export default function Authenticate() {
   //   }
   // };
 
+  const handleClick = async () => {
+    try {
+      loginWithGitHub();
+    } catch (error) {
+      setError(error);
+    }
+  };
+
   return (
     <>
       <div className="bg-darkpurple text-white h-screen w-full">
-        {/* <a href="http://localhost:7890/api/v1/github/login">
+        {/* <a href="https://alchemy-yearbook-app-2.herokuapp.com/api/v1/github/login">
           Login with github
         </a> */}
+        <button onClick={handleClick}>Log In with github</button>
         <AuthForm />
       </div>
     </>
