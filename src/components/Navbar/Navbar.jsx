@@ -23,7 +23,10 @@ export default function Navbar() {
         <div class="text-white order-3 w-full md:w-auto md:order-2">
           <ul class="flex font-semibold justify-between">
             <li class="md:px-4 md:py-2 text-indigo-500">
-              <a href="#">Cohorts</a>
+              <a href="/">Home</a>
+            </li>
+            <li class="md:px-4 md:py-2 text-indigo-500">
+              <a href="/yearbook">Cohorts</a>
             </li>
             <li class="md:px-4 md:py-2 hover:text-indigo-400">
               <a href="#">Alumni Advice</a>
@@ -32,7 +35,7 @@ export default function Navbar() {
               <a href="#">Memorybook</a>
             </li>
             <li class="md:px-4 md:py-2 hover:text-indigo-400">
-              <a href="#">About</a>
+              <a href="/about">About</a>
             </li>
           </ul>
         </div>
