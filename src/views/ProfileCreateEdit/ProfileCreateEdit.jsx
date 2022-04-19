@@ -3,10 +3,10 @@ import React from 'react';
 export default function ProfileCreateEdit() {
   return (
     <>
-      <div className="relative py-16">
-        <div className="relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40">
+      <div className="relative py-16 m-auto">
+        <div className="relative container px-6 text-gray-500 md:px-12 xl:px-40 m-auto">
           <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
-            <form className="bg-white shadow-md rounded py-4 px-4 max-h-10.4  max-w-sm ">
+            <form className="bg-white shadow-md py-4 px-4 max-h-10.4 max-w-sm rounded-lg m-auto">
               <legend className="font-bold "></legend>
               <section>
                 <label className="block font-bold mb-2 text-lg" htmlFor="email">
