@@ -55,7 +55,6 @@ export default function ProfileCreateEdit() {
                   placeholder="example@email.com"
                 />
               </section>
-
               <section>
                 <label className="block font-bold mb-2 text-lg">
                   LinkedIn URL
@@ -65,7 +64,6 @@ export default function ProfileCreateEdit() {
                   placeholder="https://www.linkedin.com/in/name"
                 />
               </section>
-
               <section>
                 <label className="block font-bold mb-2 text-lg">
                   GitHub URL
@@ -75,31 +73,24 @@ export default function ProfileCreateEdit() {
                   placeholder="https://github.com/name"
                 />
               </section>
-
               <section>
                 <label className="block font-bold mb-2 text-lg">
                   Graduation Quote
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder="Graduation Quote"
+                  placeholder='"How do I center a div?"'
                 />
               </section>
-
               <section>
-                <label
-                  className="block font-bold mb-2 text-lg"
-                  htmlFor="password"
-                  aria-label="password"
-                >
-                  Company
+                <label className="block font-bold mb-2 text-lg">
+                  Company and Position
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder="Current Company"
+                  placeholder="Full Stack Software Engineer at XYZ Company"
                 />
               </section>
-
               <button
                 type="submit"
                 className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
