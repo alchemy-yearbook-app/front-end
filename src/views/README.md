@@ -6,3 +6,10 @@ Think of a Home page in your app. The `Home.jsx` page would represent this page.
 
 profile - each persons personally info
 yearbook -
+
+if(!user.user_id) => send throw error please signin with github
+else allow access to memory
+if user.id => user does have a profile
+
+user.user_id is github's id
+user.id is profile database

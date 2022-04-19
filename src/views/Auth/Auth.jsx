@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useCurrentUser } from '../../context/UserContext';
+import { useUser } from '../../context/UserContext';
 import AuthForm from '../../components/AuthForm/AuthForm';
 // import { signIn } from '../../services/users';
 
@@ -9,7 +9,7 @@ export default function Authenticate() {
   const [email, setEmail] = useState('');
   // const [error, setError] = useState('');
   const history = useHistory();
-  const user = useCurrentUser();
+  const user = useUser();
   // const { login } = useAuth();
 
   useEffect(() => {
@@ -30,9 +30,9 @@ export default function Authenticate() {
   return (
     <>
       <div className="bg-darkpurple text-white h-screen w-full">
-        {/* <a href="http://localhost:7890/api/v1/github/login">
+        <a href="http://localhost:7890/api/v1/github/login">
           Login with github
-        </a> */}
+        </a>
         <AuthForm />
       </div>
     </>
