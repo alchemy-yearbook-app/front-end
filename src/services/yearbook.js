@@ -1,7 +1,6 @@
 export async function fetchGithubTeams() {
   const resp = await fetch(
-    // 'https://alchemy-yearbook-app.herokuapp.com/alchemycodelab/teams/students/teams'
-    'http://localhost:7890/api/v1/profile'
+    'https://alchemy-yearbook-app-2.herokuapp.com/api/v1/orgs/alchemycodelab/teams/students/teams'
   );
   const data = await resp.json();
   console.log('data', data);
