@@ -42,7 +42,7 @@ export default function Home() {
             <span className="bg-black text-white uppercase font-black xl:text-2xl py-2 px-6 rounded-full"></span>
           </div>
           <div className="bg-home bg-cover absolute left-0 right-0 w-full h-full object-cover z-10 mt-16"></div>
-          <div className="bg-gray absolute inset-0 mt-16 -ml-8"></div>
+          <div className="absolute inset-0 mt-16 -ml-8"></div>
           <svg
             className="relative z-20 pt-8 -ml-16 opacity-80"
             xmlns="http://www.w3.org/2000/svg"
