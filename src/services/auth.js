@@ -8,3 +8,5 @@ export const getCurrentUser = async () => {
     return null;
   }
 };
+
+// no profile
