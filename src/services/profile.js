@@ -17,7 +17,7 @@ export const getProfile = async (user_id) => {
   }
 };
 
-export const addProfile = async ({
+export const createProfile = async ({
   avatar,
   first_name,
   last_name,
