@@ -6,7 +6,7 @@ export default function About() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-center pb-12">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-teal">
-            Check out our awesome team members
+            Team Members
           </h1>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

@@ -11,11 +11,13 @@ import About from './views/About/About';
 import YearCreateEdit from './views/YearCreateEdit/YearCreateEdit';
 import Auth from './views/Auth/Auth';
 import { UserProvider } from './context/UserContext';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <UserProvider>
       <Router>
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <Home />
