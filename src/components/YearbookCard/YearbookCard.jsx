@@ -10,7 +10,7 @@ export default function YearbookCard({ user }) {
   return (
     <>
       {user.map((item) => (
-        <div className="mb-16 mt-40" key={item.id}>
+        <div className="mt-12 mb-20" key={item.id}>
           <div className="rounded overflow-hidden shadow-2xl bg-white">
             <div className="absolute -mt-20 w-full flex justify-center">
               <div className="h-32 w-32">

@@ -39,7 +39,7 @@ export default function YearbookList() {
             <div className="font-bold text-4xl uppercase text-center">
               {item.name}
             </div>
-            <div className="w-full bg-gray-100 px-10 pt-10">
+            <div className="w-full px-10 pt-10">
               <div className="container mx-auto">
                 <div
                   role="list"
