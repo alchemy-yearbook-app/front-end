@@ -9,8 +9,8 @@ function UserProvider({ children }) {
   const currentUser = getCurrentUser();
   const [user, setUser] = useState(
     currentUser
-      ? { id: currentUser.user_id, username: currentUser.user.email }
-      : {}
+    // ? { id: currentUser.user_id, username: currentUser.user.email }
+    // : {}
   ); // return the Provider
 
   console.log('user', user);
@@ -18,8 +18,7 @@ function UserProvider({ children }) {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-            {children}
-          
+      {children}
     </UserContext.Provider>
   );
 }
