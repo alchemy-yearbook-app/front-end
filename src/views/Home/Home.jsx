@@ -4,14 +4,14 @@ export default function Home() {
   return (
     <main className="bg-darkpurple font-montserrat">
       <header className="h-24 xl:h-32 flex items-center">
-        <div className="container mx-auto px-6 sm:px-12 flex items-center justify-between">
+        {/* <div className="container mx-auto px-6 sm:px-12 flex items-center justify-between">
           <a
             href="/about"
             className="uppercase font-black hover:text-white text-2xl"
           >
             About us
           </a>
-        </div>
+        </div> */}
       </header>
       <div className="container mx-auto px-6 sm:px-12 lg:py-6 xl:py-16 relative flex flex-col sm:flex-row">
         <div className="sm:w-1/2 sm:pt-8 lg:pt-16 pb-8 sm:pb-16 lg:pb-32 relative z-30">
