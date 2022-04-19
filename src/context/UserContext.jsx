@@ -1,65 +1,38 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
-import { getCurrentUser, signIn, signOut } from '../services/users';
-import { renderView } from '../utils/renderView';
+// import createContext, useContext, useState
+import { getCurrentUser } from '../services/users';
+import { createContext, useContext, useState } from 'react';
 
 const UserContext = createContext();
 
-export const UserProvider = ({ children }) => {
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+// create UserProvider - provides context that you are giving
+function UserProvider({ children }) {
+  const currentUser = getCurrentUser();
+  const [user, setUser] = useState(
+    currentUser
+      ? { id: currentUser.user_id, username: currentUser.user.email }
+      : {}
+  ); // return the Provider
 
-  const login = async (credentials) => {
-    try {
-      const user = await signIn(credentials);
-      setUser(user);
-    } catch (error) {
-      throw error;
-    }
-  };
-
-  const logout = useCallback(() => {
-    signOut().then(() => setUser(null));
-  }, []);
-
-  useEffect(() => {
-    getCurrentUser()
-      .then(setUser)
-      .finally(() => setLoading(false));
-  }, []);
-
-  const state = useMemo(
-    () => ({ loading, user, logout, login }),
-    [loading, user, logout, login]
-  );
+  console.log('user', user);
+  console.log('currentUser', currentUser);
 
   return (
-    <UserContext.Provider value={state}>
-      {renderView({ ...state, children })}
+    <UserContext.Provider value={{ user, setUser }}>
+            {children}
+          
     </UserContext.Provider>
   );
-};
+}
 
-export const useCurrentUser = () => {
+// useUser - the hook that you can use throughout the app
+const useUser = () => {
   const context = useContext(UserContext);
 
-  if (context === undefined)
-    throw new Error('useCurrentUser must be used within a UserProvider');
+  if (context === undefined) {
+    throw new Error('useUser must be inside the UserProvider wrapper');
+  }
 
-  return context.user;
+  return context;
 };
 
-export const useAuth = () => {
-  const context = useContext(UserContext);
-
-  if (context === undefined)
-    throw new Error('useAuth must be used within a UserProvider');
-
-  return { logout: context.logout, login: context.login };
-};
+export { UserProvider, useUser };
