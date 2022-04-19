@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useCurrentUser } from '../../context/UserContext';
-// import AuthForm from '../../components/AuthForm/AuthForm';
+import AuthForm from '../../components/AuthForm/AuthForm';
 // import { signIn } from '../../services/users';
 
 export default function Authenticate() {
@@ -30,14 +30,10 @@ export default function Authenticate() {
   return (
     <>
       <div className="bg-darkpurple text-white h-screen w-full">
-        <a href="/yearbook" className="text-lg text-center font-bold">
-          Back
-        </a>
-
-        <a href="http://localhost:7890/api/v1/github/login">
+        {/* <a href="http://localhost:7890/api/v1/github/login">
           Login with github
-        </a>
-        {/* <AuthForm handleSubmit={handleSubmit} /> */}
+        </a> */}
+        <AuthForm />
       </div>
     </>
   );
