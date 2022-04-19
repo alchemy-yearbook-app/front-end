@@ -5,7 +5,7 @@ export default function About() {
     <div className="w-full h-full min-h-screen">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-center pb-12">
-          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-teal">
+          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-white">
             Team Members
           </h1>
         </div>
@@ -30,7 +30,7 @@ export default function About() {
               <div className="flex justify-start space-x-2">
                 <a
                   href="https://github.com/kevindo1"
-                  className="text-teal hover:text-purple"
+                  className="text-pink hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -47,7 +47,7 @@ export default function About() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/kdo/"
-                  className="text-teal hover:text-purple"
+                  className="text-pink hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -79,7 +79,7 @@ export default function About() {
               <div className="flex justify-start space-x-2">
                 <a
                   href="https://github.com/H-Indiana-Holdsworth"
-                  className="text-teal hover:text-purple"
+                  className="text-pink hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -96,7 +96,7 @@ export default function About() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/h-indiana-holdsworth/"
-                  className="text-teal hover:text-purple"
+                  className="text-pink hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -131,7 +131,7 @@ export default function About() {
               <div className="flex justify-start space-x-2">
                 <a
                   href="https://github.com/mira-kine"
-                  className="text-teal hover:text-purple"
+                  className="text-pink hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -148,7 +148,7 @@ export default function About() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/mira-kinebuchi/"
-                  className="text-teal hover:text-purple"
+                  className="text-pink hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -179,7 +179,7 @@ export default function About() {
               <div className="flex justify-start space-x-2">
                 <a
                   href="https://github.com/markjvoltaire"
-                  className="text-teal hover:text-purple"
+                  className="text-pink hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
@@ -196,7 +196,7 @@ export default function About() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/mark-voltaire/"
-                  className="text-teal hover:text-purple"
+                  className="text-pink hover:text-purple"
                 >
                   <svg
                     className="w-6 h-6"
