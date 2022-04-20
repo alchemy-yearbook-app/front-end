@@ -35,10 +35,10 @@ export default function Navbar() {
               <a href="/yearbook">Cohorts</a>
             </li>
             <li className="md:px-4 md:py-2 hover:text-teal">
-              <a href="#">Alumni Advice</a>
+              <a href="/advice">Alumni Advice</a>
             </li>
             <li className="md:px-4 md:py-2 hover:text-teal">
-              <a href="#">Memorybook</a>
+              <a href="/memorybook">Memorybook</a>
             </li>
             <li className="md:px-4 md:py-2 hover:text-teal">
               <a href="/about">About Us</a>
