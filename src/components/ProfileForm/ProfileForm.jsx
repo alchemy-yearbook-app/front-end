@@ -3,7 +3,7 @@ import { useForm } from '../../hooks/useForm';
 import { useProfile } from '../../hooks/useProfile';
 import { getProfileById } from '../../services/profile';
 import { getCurrentUser } from '../../services/users';
-
+// useUser hook (refactor later)
 export default function ProfileForm({ isEditing, onSubmit }) {
   const [user, setUser] = useState({});
 
