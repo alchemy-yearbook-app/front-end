@@ -39,6 +39,33 @@ export default function Advice() {
             <div class="caption">Deadge</div>
           </div>
         </div>
+        <div class="item">
+          <div class="polaroid">
+            <img src="https://i.ibb.co/12KjvzC/Screen-Shot-2022-04-11-at-9-21-40-AM.png" />
+            <div class="caption">7 foot tall</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="polaroid">
+            <img src="https://i.ibb.co/12KjvzC/Screen-Shot-2022-04-11-at-9-21-40-AM.png" />
+            <div class="caption">7 foot tall</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="polaroid">
+            <img src="https://i.ibb.co/12KjvzC/Screen-Shot-2022-04-11-at-9-21-40-AM.png" />
+            <div class="caption">7 foot tall</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="polaroid">
+            <div class="caption">
+              7 foot tall 7 foot tall 7 foot tall 7 foot tall 7 foot tall 7 foot
+              tall 7 foot tall 7 foot tall 7 foot tall 7 foot tall 7 foot tall 7
+              foot tall 7 foot tall 7 foot tall
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -4,8 +4,10 @@ import { useUser } from '../../context/UserContext';
 // import { signOutUser } from '../../services/users';
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useRef, useState } from 'react';
+import { useProfile } from '../../hooks/useProfile';
 
 export default function Button() {
+  const { profile } = useProfile();
   const { user } = useUser();
   const history = useHistory();
 
@@ -40,6 +42,32 @@ export default function Button() {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-purple divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border-2 border-white">
+            {/* {!profile ? ( */}
+            <div className="px-1 py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    className={`${
+                      active ? 'text-teal' : 'text-white'
+                    } group flex rounded-md items-center w-full px-2 py-2 text-md`}
+                  >
+                    {active ? (
+                      <DuplicateActiveIcon
+                        className="w-5 h-5 mr-2"
+                        aria-hidden="true"
+                      />
+                    ) : (
+                      <DuplicateInactiveIcon
+                        className="w-5 h-5 mr-2"
+                        aria-hidden="true"
+                      />
+                    )}
+                    Create Profile
+                  </button>
+                )}
+              </Menu.Item>
+            </div>
+            {/* ) : ( */}
             <div className="px-1 py-1">
               <Menu.Item>
                 {({ active }) => (
@@ -64,6 +92,7 @@ export default function Button() {
                 )}
               </Menu.Item>
             </div>
+            {/* )} */}
             <div className="px-1 py-1">
               <div>
                 <Menu.Item>
@@ -74,12 +103,12 @@ export default function Button() {
                       } group flex rounded-md items-center w-full px-2 py-2 text-md`}
                     >
                       {active ? (
-                        <ArchiveActiveIcon
+                        <MoveActiveIcon
                           className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
                       ) : (
-                        <ArchiveInactiveIcon
+                        <MoveInactiveIcon
                           className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
