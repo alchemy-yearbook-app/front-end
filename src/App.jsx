@@ -6,7 +6,7 @@ import Yearbook from './views/Yearbook/Yearbook';
 // import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Memorybook from './views/Memorybook/Memorybook';
 import About from './views/About/About';
-// import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
+import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
 import ProfileCreateEdit from './views/ProfileCreateEdit/ProfileCreateEdit';
 import Auth from './views/Auth/Auth';
 import { UserProvider } from './context/UserContext';
@@ -40,10 +40,12 @@ function App() {
           <Route exact path="/memorybook">
             <Memorybook />
           </Route>
-          {/* <PrivateRoute exact path="/memorybook/create">
+          <Route exact path="/memorybook/create">
             <MemCreateEdit />
-            </PrivateRoute>
-            <PrivateRoute exact path="/memorybook/:id/edit">
+
+          </Route>
+          {/* <PrivateRoute exact path="/memorybook/:id/edit">
+
             <MemCreateEdit isEditing />
           </PrivateRoute> */}
           <Route exact path="/about">
