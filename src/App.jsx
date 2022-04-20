@@ -15,8 +15,8 @@ import AlumAdvice from './views/AlumAdvice/AlumAdvice';
 
 function App() {
   return (
-    <UserProvider>
-      <Router>
+    <Router>
+      <UserProvider>
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -45,16 +45,16 @@ function App() {
           </Route>
           {/* <PrivateRoute exact path="/memorybook/create">
             <MemCreateEdit />
-          </PrivateRoute>
-          <PrivateRoute exact path="/memorybook/:id/edit">
+            </PrivateRoute>
+            <PrivateRoute exact path="/memorybook/:id/edit">
             <MemCreateEdit isEditing />
           </PrivateRoute> */}
           <Route exact path="/about">
             <About />
           </Route>
         </Switch>
-      </Router>
-    </UserProvider>
+      </UserProvider>
+    </Router>
   );
 }
 
