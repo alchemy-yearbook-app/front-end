@@ -12,6 +12,7 @@ import ProfileCreateEdit from './views/ProfileCreateEdit/ProfileCreateEdit';
 import Auth from './views/Auth/Auth';
 import { UserProvider } from './context/UserContext';
 import Navbar from './components/Navbar/Navbar';
+import AlumAdvice from './views/AlumAdvice/AlumAdvice';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route exact path="/profile/create">
             <ProfileCreateEdit />
+          </Route>
+          <Route exact path="/alumadvice/">
+            <AlumAdvice />
           </Route>
           {/* <PrivateRoute exact path="/profile/:id/edit">
             <YearCreateEdit isEditing />
