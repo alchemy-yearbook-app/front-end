@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
-import AuthForm from '../../components/AuthForm/AuthForm';
 import { loginWithGitHub } from '../../services/auth';
+// import AuthForm from '../../components/AuthForm/AuthForm';
 // import { signIn } from '../../services/users';
 
-export default function Authenticate() {
+export default function Auth() {
   const [setUsername] = useState();
   const history = useHistory();
   const user = useUser();
@@ -26,7 +26,7 @@ export default function Authenticate() {
         </a> */}
         <button onClick={handleClick}>Log In with github</button>
 
-        <AuthForm />
+        {/* <AuthForm /> */}
       </div>
     </>
   );
