@@ -69,10 +69,11 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
         history.replace(`/yearbook`);
       }
     } catch (error) {
-      setFormError('Please add a deadline!');
+      setFormError('Error please try again');
     }
   };
-
+  console.log('formState', formState);
+  console.log('profile', profile);
   // const handleDelete = async (e) => {
   //   e.preventDefault();
   //   await deleteJob(job.id);
@@ -96,7 +97,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     id="firstName"
-                    name="FirstName"
+                    name="first_name"
                     placeholder="First Name"
                     value={formState.first_name}
                     onChange={handleForm}
@@ -108,6 +109,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    name="last_name"
                     placeholder="Last Name"
                     value={formState.last_name}
                     onChange={handleForm}
@@ -119,7 +121,8 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="lowercase he/him, she/her, they/them"
+                    placeholder="he/him, she/her, they/them"
+                    name="pronouns"
                     value={formState.pronouns}
                     onChange={handleForm}
                   />
@@ -135,6 +138,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="https://media-exp1.licdn.com/xyz"
+                    name="avatar"
                     value={formState.avatar}
                     onChange={handleForm}
                   />
@@ -144,6 +148,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="example@email.com"
+                    name="email"
                     value={formState.email}
                     onChange={handleForm}
                   />
@@ -155,6 +160,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="https://www.linkedin.com/in/name"
+                    name="linked_in"
                     value={formState.linked_in}
                     onChange={handleForm}
                   />
@@ -166,6 +172,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="https://github.com/name"
+                    name="github"
                     value={formState.github}
                     onChange={handleForm}
                   />
@@ -177,6 +184,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder='"How do I center a div?"'
+                    name="quote"
                     value={formState.quote}
                     onChange={handleForm}
                   />
@@ -188,6 +196,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Full Stack Software Engineer at XYZ Company"
+                    name="company"
                     value={formState.company}
                     onChange={handleForm}
                   />
