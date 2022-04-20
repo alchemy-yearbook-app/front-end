@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { getCurrentUser, signIn } from '../../services/users';
 import { fetchGithubTeams, fetchYearbook } from '../../services/yearbook';
 import YearbookCard from '../YearbookCard/YearbookCard';
 
 export default function YearbookList() {
   const [cohort, setCohort] = useState([]);
   const [alumni, setAlumni] = useState([]);
+  const [user, setUser] = useState({});
 
   const [loading, setLoading] = useState(true);
 
@@ -20,7 +22,18 @@ export default function YearbookList() {
 
   useEffect(() => {
     const fetchData = async () => {
+      const data = await getCurrentUser();
+      setUser(data);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+  console.log('user', user);
+
+  useEffect(() => {
+    const fetchData = async () => {
       const data = await fetchYearbook();
+      console.log('data', data);
       setAlumni(data);
       setLoading(false);
     };

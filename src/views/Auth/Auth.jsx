@@ -8,7 +8,6 @@ import { loginWithGitHub } from '../../services/auth';
 export default function Auth() {
   const [setUsername] = useState();
   const history = useHistory();
-  const user = useUser();
 
   const handleClick = async () => {
     try {

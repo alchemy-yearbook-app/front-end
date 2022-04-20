@@ -1,32 +1,18 @@
 export const getCurrentUser = async () => {
   try {
     // give back user profile
-    const res = await fetch(
-      `${process.env.API_URL}/api/v1/github/login/callback`,
-      {
-        credentials: 'include',
-      }
-    );
+    const res = await fetch(`${process.env.API_URL}/api/v1/user`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+    });
     const user = await res.json();
-    console.log('user', user);
     return user;
   } catch (error) {
+    console.log('error', error);
     return null;
   }
-};
-
-export const signIn = async () => {
-  const res = await fetch(`${process.env.API_URL}/api/v1/github/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    mode: 'cors',
-  });
-
-  if (!res.ok)
-    throw new Error('User must be a part of Alchemy Code Lab organization');
-
-  return res.json();
 };
 
 export const signOut = async () => {
