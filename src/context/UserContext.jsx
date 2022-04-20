@@ -17,7 +17,6 @@ function UserProvider({ children }) {
         }
       : {}
   ); // return the Provider
-  console.log('user', user);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
