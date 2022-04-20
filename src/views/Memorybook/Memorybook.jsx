@@ -1,9 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Memorybook.css';
 
 export default function Memorybook() {
   return (
     <div>
+      <Link to="/memorybook/create">
+        <button className="bg-blue-500 hover:bg-blue-700 py-0.3 text-white font-bold rounded focus:outline-none focus:shadow-outline">
+          Add Memory
+        </button>
+      </Link>
       <div class="wrapper">
         <div class="item">
           <div class="polaroid">
