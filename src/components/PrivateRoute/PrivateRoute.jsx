@@ -5,7 +5,7 @@ import { Redirect, Route } from 'react-router-dom';
 // screen if you're not yet authenticated.
 export default function PrivateRoute({ children, ...rest }) {
   // TODO: Use the user in context to determine whether to redirect to /login
-  //   const { user } = useUser();
+  // const { user } = useUser();
 
   return (
     <Route

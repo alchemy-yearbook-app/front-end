@@ -16,21 +16,21 @@ import AlumAdvice from './views/AlumAdvice/AlumAdvice';
 function App() {
   return (
     <Router>
-      <UserProvider>
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/sign-in">
-            <Auth />
-          </Route>
-          <Route exact path="/sign-up">
-            <Auth isSigningUp />
-          </Route>
-          <Route exact path="/yearbook">
-            <Yearbook />
-          </Route>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/sign-in">
+          <Auth />
+        </Route>
+        <Route exact path="/sign-up">
+          <Auth isSigningUp />
+        </Route>
+        <Route exact path="/yearbook">
+          <Yearbook />
+        </Route>
+        <UserProvider>
           <Route exact path="/profile/create">
             <ProfileCreateEdit />
           </Route>
@@ -43,17 +43,17 @@ function App() {
           <Route exact path="/memorybook">
             <Memorybook />
           </Route>
-          {/* <PrivateRoute exact path="/memorybook/create">
+        </UserProvider>
+        {/* <PrivateRoute exact path="/memorybook/create">
             <MemCreateEdit />
             </PrivateRoute>
             <PrivateRoute exact path="/memorybook/:id/edit">
             <MemCreateEdit isEditing />
           </PrivateRoute> */}
-          <Route exact path="/about">
-            <About />
-          </Route>
-        </Switch>
-      </UserProvider>
+        <Route exact path="/about">
+          <About />
+        </Route>
+      </Switch>
     </Router>
   );
 }
