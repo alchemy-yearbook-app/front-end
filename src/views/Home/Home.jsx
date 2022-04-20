@@ -34,15 +34,15 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="sm:w-1/2 lg:w-2/3 absolute sm:absolute my-auto right-0 align-middle flex">
+        <div className="sm:w-1/2 lg:w-2/3 absolute sm:absolute my-auto right-0 align-middle sm:block hidden">
           <h3 className="monteserrat font-black text-white absolute top-0 left-0 mt-32 sm:mt-32 lg:mt-56 ml-0 lg:ml-12 z-30 text-xl sm:text-3xl lg:text-4xl xl:text-5xl transform rotate-90"></h3>
           <div className="left-0 bottom-0 w-full h-16 absolute z-30 flex items-center justify-center mb-12 lg:mb-24 xl:mb-32">
             <span className="bg-black text-white uppercase font-black xl:text-2xl py-2 px-6 rounded-full"></span>
           </div>
           <div className="bg-home bg-cover absolute left-0 right-0 w-full h-full object-cover z-10 mt-16"></div>
-          <div className="absolute inset-0 mt-16 -ml-8"></div>
+          <div className="absolute inset-0"></div>
           <svg
-            className="relative z-20 pt-12 -ml-16 opacity-80"
+            className="relative z-20 pt-12 opacity-80"
             xmlns="http://www.w3.org/2000/svg"
             data-name="Capa 1"
             viewBox="0 0 428.29 298.11"

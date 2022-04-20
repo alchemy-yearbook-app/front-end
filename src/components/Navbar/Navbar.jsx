@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-darkerpurple w-100 px-32 md:px-auto mb-12">
-      <div className="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
+      <div className="md:h-16 h-28 mx-auto md:px-4 container sm:flex items-center justify-between flex-wrap md:flex-nowrap hidden">
         <div className="text-white md:order-1 hover:text-teal w-20">
           <a href="/">
             <svg
