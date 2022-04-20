@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { loginWithGitHub } from '../../services/auth';
-import AuthForm from '../../components/AuthForm/AuthForm';
+// import AuthForm from '../../components/AuthForm/AuthForm';
 // import { signIn } from '../../services/users';
 
 export default function Auth() {
@@ -44,7 +44,7 @@ export default function Auth() {
         </a> */}
         <button onClick={handleClick}>Log In with github</button>
 
-        <AuthForm />
+        {/* <AuthForm /> */}
       </div>
     </>
   );
