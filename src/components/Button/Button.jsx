@@ -104,12 +104,12 @@ export default function Button() {
                       } group flex rounded-md items-center w-full px-2 py-2 text-md`}
                     >
                       {active ? (
-                        <MoveActiveIcon
+                        <MoveInactiveIcon
                           className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
                       ) : (
-                        <MoveInactiveIcon
+                        <MoveActiveIcon
                           className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
