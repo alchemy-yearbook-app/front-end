@@ -28,7 +28,6 @@ export default function YearbookList() {
     };
     fetchData();
   }, []);
-  console.log('user', user);
 
   useEffect(() => {
     const fetchData = async () => {
