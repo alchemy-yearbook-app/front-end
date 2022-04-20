@@ -10,17 +10,22 @@ export default function MemoryForm() {
               <form className="bg-white shadow-md py-4 px-4 max-h-10.4 max-w-sm rounded-lg m-auto">
                 <legend className="font-bold "></legend>
                 <section>
-                  <label
-                    className="block font-bold mb-2 text-lg"
-                    htmlFor="email"
-                  >
-                    First Name
+                  <label className="block font-bold mb-2 text-lg">
+                    Memory Title
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id="firstName"
-                    name="FirstName"
-                    placeholder="First Name"
+                    placeholder="Enter Memory Title"
+                  />
+                </section>
+
+                <section>
+                  <label className="block font-bold mb-2 text-lg">
+                    Image URL
+                  </label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Enter Image Url"
                   />
                 </section>
 
@@ -28,7 +33,7 @@ export default function MemoryForm() {
                   type="submit"
                   className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
                 >
-                  Save Changes
+                  Add Memory
                 </button>
               </form>
             </div>
