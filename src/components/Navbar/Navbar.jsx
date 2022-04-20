@@ -61,7 +61,9 @@ export default function Navbar() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <a href="/sign-in">Login</a>
+                <a href="/sign-in" className="font-bold">
+                  Login
+                </a>
               </button>
             </>
           ) : (
