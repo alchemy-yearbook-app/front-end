@@ -33,7 +33,6 @@ export default function YearbookList() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchYearbook();
-      console.log('data2', data);
       setAlumni(data);
       setLoading(false);
     };
