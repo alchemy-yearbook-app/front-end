@@ -15,7 +15,6 @@ export const fetchYearbook = async () => {
       mode: 'cors',
     });
     const data = await resp.json();
-    console.log('data3', data);
     return data;
   } catch (error) {
     return null;

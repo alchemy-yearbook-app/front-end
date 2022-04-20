@@ -1,26 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { useProfile } from '../../hooks/useProfile';
 import { getProfileById } from '../../services/profile';
-import { getCurrentUser } from '../../services/users';
+
 // useUser hook (refactor later)
-export default function ProfileForm({ isEditing, onSubmit }) {
-  const [user, setUser] = useState({});
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getCurrentUser();
-      setUser(data);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
-
+export default function ProfileForm({ isEditing, onSubmit, user }) {
   const { profile, setProfile } = useProfile(user.uuid);
 
   const { formState, handleForm, setFormState, setFormError, formError } =
     useForm({
-      avatar: '',
+      // avatar: '',
       first_name: '',
       last_name: '',
       pronouns: '',
@@ -38,7 +27,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const {
-      avatar,
+      // avatar,
       first_name,
       last_name,
       pronouns,
@@ -52,7 +41,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
       if (isEditing) {
         await onSubmit({
           id,
-          avatar,
+          // avatar,
           first_name,
           last_name,
           pronouns,
@@ -83,7 +72,6 @@ export default function ProfileForm({ isEditing, onSubmit }) {
       setFormError('Please add a deadline!');
     }
   };
-  console.log('profile', profile);
 
   // const handleDelete = async (e) => {
   //   e.preventDefault();
@@ -97,8 +85,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
         <div className="relative py-16 m-auto">
           <div className="relative container px-6 text-gray-500 md:px-12 xl:px-40 m-auto">
             <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
-              <form className="bg-white shadow-md py-4 px-4 max-h-10.4 max-w-sm rounded-lg m-auto">
-                <legend className="font-bold "></legend>
+              <div className="bg-white shadow-md py-4 px-4 max-h-10.4 max-w-sm rounded-lg m-auto">
                 <section>
                   <label
                     className="block font-bold mb-2 text-lg"
@@ -137,7 +124,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
                     onChange={handleForm}
                   />
                 </section>
-                <section>
+                {/* <section>
                   <label className="block font-bold mb-2 text-lg">
                     Profile Picture URL
                   </label>
@@ -151,7 +138,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
                     value={formState.avatar}
                     onChange={handleForm}
                   />
-                </section>
+                </section> */}
                 <section>
                   <label className="block font-bold mb-2 text-lg">Email</label>
                   <input
@@ -220,7 +207,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
                     Delete
                   </button>
                 ) : null} */}
-              </form>
+              </div>
             </div>
           </div>
         </div>
