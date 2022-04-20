@@ -1,4 +1,4 @@
-export const getProfileById = async (user_id) => {
+export const getProfileById = async ({ user_id }) => {
   try {
     const res = await fetch(
       `${process.env.API_URL}/api/v1/profile/${user_id}`,

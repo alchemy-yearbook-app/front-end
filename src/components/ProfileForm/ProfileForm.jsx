@@ -1,10 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { useProfile } from '../../hooks/useProfile';
 import { getProfileById } from '../../services/profile';
-
+import { getCurrentUser } from '../../services/users';
+// useUser hook (refactor later)
 export default function ProfileForm({ isEditing, onSubmit }) {
-  const { profile, setProfile } = useProfile(id);
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getCurrentUser();
+      setUser(data);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  const { profile, setProfile } = useProfile(user.uuid);
+
   const { formState, handleForm, setFormState, setFormError, formError } =
     useForm({
       avatar: '',
@@ -49,7 +62,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
           company,
           email,
         });
-        const resp = await getProfileById(job.id);
+        const resp = await getProfileById(user.uuid);
         setProfile(resp);
         history.replace(`/yearbook`);
       } else {
@@ -70,6 +83,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
       setFormError('Please add a deadline!');
     }
   };
+  console.log('profile', profile);
 
   // const handleDelete = async (e) => {
   //   e.preventDefault();

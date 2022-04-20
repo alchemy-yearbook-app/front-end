@@ -1,16 +1,22 @@
 export async function fetchGithubTeams() {
   const resp = await fetch(
-    'https://alchemy-yearbook-app-2.herokuapp.com/api/v1/orgs/alchemycodelab/teams/students/teams'
+    `${process.env.API_URL}/api/v1/orgs/alchemycodelab/teams/students/teams`
   );
   const data = await resp.json();
   return data;
 }
 
-export async function fetchYearbook() {
-  const resp = await fetch(
-    'https://alchemy-yearbook-app-2.herokuapp.com/api/v1/profile'
-  );
-  const data = await resp.json();
-  console.log('data', data);
-  return data;
-}
+export const fetchYearbook = async () => {
+  try {
+    const resp = await fetch(`${process.env.API_URL}/api/v1/profile`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+    });
+    const data = await resp.json();
+    return data;
+  } catch (error) {
+    return null;
+  }
+};
