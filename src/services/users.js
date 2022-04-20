@@ -10,7 +10,6 @@ export const getCurrentUser = async () => {
     const user = await res.json();
     return user;
   } catch (error) {
-    console.log('error', error);
     return null;
   }
 };
