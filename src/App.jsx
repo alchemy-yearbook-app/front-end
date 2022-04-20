@@ -25,9 +25,6 @@ function App() {
           <Route exact path="/sign-in">
             <Auth />
           </Route>
-          <Route exact path="/sign-up">
-            <Auth isSigningUp />
-          </Route>
           <Route exact path="/yearbook">
             <Yearbook />
           </Route>
