@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-export default function YearbookCard({ user }) {
-  // const [loading, setLoading] = useState(false);
-
-  // if (loading) {
-  //   <h3>loading..</h3>;
-  // }
-
+export default function YearbookCard({ alumni }) {
   return (
     <>
-      {user.map((item) => (
+      {alumni.map((item) => (
         <div className="mt-12 mb-20" key={item.id}>
           <div className="rounded overflow-hidden shadow-2xl bg-white">
             <div className="absolute -mt-20 w-full flex justify-center">

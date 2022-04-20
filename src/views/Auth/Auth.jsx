@@ -7,26 +7,8 @@ import { loginWithGitHub } from '../../services/auth';
 
 export default function Auth() {
   const [setUsername] = useState();
-  const [email, setEmail] = useState('');
-  // const [error, setError] = useState('');
   const history = useHistory();
   const user = useUser();
-  // const { login } = useAuth();
-
-  // useEffect(() => {
-  //   if (user?.username) history.replace('/dashboard');
-  // }, []);
-
-  // const handleSubmit = async (event) => {
-  //   try {
-  //     // event.preventDefault();
-  //     // await login({ username, email });
-  //     const user = await signIn();
-  //     setUsername(user);
-  //   } catch (err) {
-  //     throw err;
-  //   }
-  // };
 
   const handleClick = async () => {
     try {
