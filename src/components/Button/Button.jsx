@@ -46,7 +46,8 @@ export default function Button() {
             <div className="px-1 py-1">
               <Menu.Item>
                 {({ active }) => (
-                  <button
+                  <a
+                    href="/profile/create"
                     className={`${
                       active ? 'text-teal' : 'text-white'
                     } group flex rounded-md items-center w-full px-2 py-2 text-md`}
@@ -63,7 +64,7 @@ export default function Button() {
                       />
                     )}
                     Create Profile
-                  </button>
+                  </a>
                 )}
               </Menu.Item>
             </div>

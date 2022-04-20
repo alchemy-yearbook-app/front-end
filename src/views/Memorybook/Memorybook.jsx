@@ -9,6 +9,7 @@ export default function Memorybook() {
           <div class="polaroid">
             <img src="https://emoji.slack-edge.com/T6FCZF1HR/potato-head/6c637bbe90391dfd.png" />
             <div class="caption">Dan's Potato</div>
+            <div class="caption">- Dan</div>
           </div>
         </div>
 

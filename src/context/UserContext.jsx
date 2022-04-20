@@ -9,8 +9,8 @@ function UserProvider({ children }) {
   const currentUser = getCurrentUser();
   const [user, setUser] = useState(
     currentUser
-    // ? { id: currentUser.user_id, username: currentUser.user.email }
-    // : {}
+      ? { id: currentUser.user_id, username: currentUser.username }
+      : {}
   ); // return the Provider
 
   console.log('user', user);
