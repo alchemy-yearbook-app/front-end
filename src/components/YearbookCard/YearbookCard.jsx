@@ -9,7 +9,7 @@ export default function YearbookCard({ alumni }) {
             <div className="absolute -mt-20 w-full flex justify-center">
               <div className="h-32 w-32">
                 <img
-                  src={item.avatar}
+                  src={item.avatar_url}
                   alt="Display Picture"
                   role="img"
                   className="rounded-full object-cover h-full w-full shadow-xl"
@@ -18,7 +18,8 @@ export default function YearbookCard({ alumni }) {
             </div>
             <div className="px-6 mt-16">
               <h1 className="font-bold text-3xl text-center mb-1">
-                {item.firstName} {item.lastName}
+                {/* {item.firstName} {item.lastName} */}
+                {item.login}
               </h1>
               <p className="text-gray-800 text-sm text-center">
                 {item.company}
