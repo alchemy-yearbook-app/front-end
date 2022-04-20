@@ -3,7 +3,7 @@ import { useUser } from '../../context/UserContext';
 import Button from '../Button/Button';
 
 export default function Navbar() {
-  const { user } = useUser;
+  const { user } = useUser();
 
   return (
     <nav className="bg-darkerpurple w-100 px-32 md:px-auto mb-12">
@@ -46,7 +46,7 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="order-2 md:order-3 text-white hover:text-teal w-20">
-          {user ? (
+          {!user ? (
             <>
               <button className="px-4 py-2 rounded-xl flex items-center gap-2">
                 <svg
