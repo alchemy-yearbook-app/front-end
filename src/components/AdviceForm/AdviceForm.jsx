@@ -1,6 +1,16 @@
 import React from 'react';
+import { useForm } from '../../hooks/useForm';
 
 export default function () {
+  const { formState, handleForm, setFormState, setFormError, formError } =
+    useForm({
+      // avatar: '',
+      title: '',
+      advice: '',
+      alumni_name: '',
+      cohort: '',
+    });
+
   return (
     <>
       <form>
@@ -15,6 +25,7 @@ export default function () {
                     id="adviceTitle"
                     name="advice_title"
                     placeholder="Enter Title"
+                    value={formState.title}
                   />
                 </section>
 
@@ -25,6 +36,7 @@ export default function () {
                     id="advice"
                     name="advice"
                     placeholder="Advice for current students"
+                    value={formState.advice}
                   />
                 </section>
 
@@ -37,6 +49,7 @@ export default function () {
                     id="alumni_name"
                     name="alumni_name"
                     placeholder="What's your name"
+                    value={formState.alumni_name}
                   />
                 </section>
 
@@ -47,6 +60,7 @@ export default function () {
                     id="cohort"
                     name="cohort"
                     placeholder="What cohort were you apart of ? "
+                    value={formState.cohort}
                   />
                 </section>
 
