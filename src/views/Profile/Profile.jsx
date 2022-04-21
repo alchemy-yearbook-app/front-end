@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useProfile } from '../../hooks/useProfile';
 import { useParams, useHistory } from 'react-router-dom';
+import { getProfileById } from '../../services/profile';
+import { useUser } from '../../context/UserContext';
 
 export default function Profile() {
+  const { user } = useUser();
   const history = useHistory();
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const { profile } = useProfile(id);
 
@@ -19,9 +23,13 @@ export default function Profile() {
     history.push('/yearbook/');
   };
 
+  // if (loading) {
+  //   return <div></div>;
+  // }
+
   return (
     <div>
-      <div className="flex justify-center bg-blue-100">
+      <div className="flex justify-center">
         <div className="bg-white rounded-2xl border shadow-xl p-10 max-w-lg">
           <div className="flex flex-col items-center space-y-4">
             {!profile ? (
@@ -34,7 +42,7 @@ export default function Profile() {
                   Yearbook!
                 </p>
                 <button
-                  onClick="handleCrate"
+                  onClick={handleCreate}
                   className="bg-purple text-white rounded-md font-semibold px-4 py-3 w-full"
                 >
                   Create Profile
