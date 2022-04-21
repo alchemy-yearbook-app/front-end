@@ -61,38 +61,38 @@ export const updateProfile = async ({
   email,
   pronoun,
 }) => {
-  const res = await fetch(
-    `${process.env.API_URL}/api/v1/profile/${profile.id}`,
-    {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      mode: 'cors',
-      body: JSON.stringify({
-        id,
-        avatar,
-        firstName,
-        lastName,
-        linkedIn,
-        github,
-        quote,
-        company,
-        email,
-        pronoun,
-      }),
-    }
-  );
+  const res = await fetch(`${process.env.API_URL}/api/v1/profile/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+    body: JSON.stringify({
+      id,
+      avatar,
+      firstName,
+      lastName,
+      linkedIn,
+      github,
+      quote,
+      company,
+      email,
+      pronoun,
+    }),
+  });
 
   return res.json();
 };
 
 export const deleteProfile = async (id) => {
-  const res = await fetch(`${process.env.API_URL}/api/v1/profile/${id}`, {
-    method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    mode: 'cors',
-  });
+  const res = await fetch(
+    `${process.env.API_URL}/api/v1/profile/${profile.id}`,
+    {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+    }
+  );
 
   return res.ok;
 };

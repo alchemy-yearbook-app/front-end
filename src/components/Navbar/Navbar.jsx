@@ -1,5 +1,6 @@
 import React from 'react';
 import { useUser } from '../../context/UserContext';
+import { useProfile } from '../../hooks/useProfile';
 import Button from '../Button/Button';
 
 export default function Navbar() {
