@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="bg-darkpurple font-montserrat px-12">
       <div className="container mx-auto sm:px-12 relative flex flex-col sm:flex-row">
-        <div className="sm:w-1/2 sm:pt-2 lg:pt-30 pb-8 sm:pb-16 lg:pb-32 relative z-30">
+        <div className="sm:w-1/2 sm:pt-2 lg:pt-30 pb-8 sm:pb-16 lg:pb-32 relative z-30 h-screen mb-20">
           <h2 className="uppercase text-black font-bold tracking-wider text-2xl mt-40 flex text-clip">
             Alchemy Code Lab
           </h2>

@@ -2,69 +2,74 @@ import React, { useEffect } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { useProfile } from '../../hooks/useProfile';
 import { getProfileById } from '../../services/profile';
+import { useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // useUser hook (refactor later)
-export default function ProfileForm({ isEditing, onSubmit, user }) {
-  const { profile, setProfile } = useProfile(user.uuid);
-
+export default function ProfileForm({ isEditing, onSubmit }) {
+  const { id } = useParams();
+  const { profile, setProfile } = useProfile(id);
+  const history = useHistory();
   const { formState, handleForm, setFormState, setFormError, formError } =
     useForm({
-      // avatar: '',
-      first_name: '',
-      last_name: '',
-      pronouns: '',
-      linked_in: '',
+      avatar: '',
+      firstName: '',
+      lastName: '',
+      linkedIn: '',
       github: '',
       quote: '',
       company: '',
       email: '',
+      pronoun: '',
     });
 
   useEffect(() => {
     setFormState(profile);
   }, [profile]);
 
+  console.log('profile', profile);
+  console.log('id', id);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const {
-      // avatar,
-      first_name,
-      last_name,
-      pronouns,
-      linked_in,
+      avatar,
+      firstName,
+      lastName,
+      linkedIn,
       github,
       quote,
       company,
       email,
+      pronoun,
     } = formState;
     try {
       if (isEditing) {
         await onSubmit({
           id,
-          // avatar,
-          first_name,
-          last_name,
-          pronouns,
-          linked_in,
+          avatar,
+          firstName,
+          lastName,
+          linkedIn,
           github,
           quote,
           company,
           email,
+          pronoun,
         });
-        const resp = await getProfileById(user.uuid);
+        const resp = await getProfileById(id);
         setProfile(resp);
         history.replace(`/yearbook`);
       } else {
         await onSubmit({
           avatar,
-          first_name,
-          last_name,
-          pronouns,
-          linked_in,
+          firstName,
+          lastName,
+          linkedIn,
           github,
           quote,
           company,
           email,
+          pronoun,
         });
         history.replace(`/yearbook`);
       }
@@ -72,13 +77,11 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
       setFormError('Error please try again');
     }
   };
-  console.log('formState', formState);
-  console.log('profile', profile);
-  // const handleDelete = async (e) => {
-  //   e.preventDefault();
-  //   await deleteJob(job.id);
-  //   history.replace('/profile');
-  // };
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    await deleteJob(id);
+    history.replace('/profile');
+  };
 
   return (
     <>
@@ -97,9 +100,9 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     id="firstName"
-                    name="first_name"
+                    name="firstName"
                     placeholder="First Name"
-                    value={formState.first_name}
+                    value={formState.firstName}
                     onChange={handleForm}
                   />
                 </section>
@@ -109,9 +112,9 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    name="last_name"
+                    name="lastName"
                     placeholder="Last Name"
-                    value={formState.last_name}
+                    value={formState.lastName}
                     onChange={handleForm}
                   />
                 </section>
@@ -122,12 +125,12 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="he/him, she/her, they/them"
-                    name="pronouns"
-                    value={formState.pronouns}
+                    name="pronoun"
+                    value={formState.pronoun}
                     onChange={handleForm}
                   />
                 </section>
-                {/* <section>
+                <section>
                   <label className="block font-bold mb-2 text-lg">
                     Profile Picture URL
                   </label>
@@ -142,7 +145,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                     value={formState.avatar}
                     onChange={handleForm}
                   />
-                </section> */}
+                </section>
                 <section>
                   <label className="block font-bold mb-2 text-lg">Email</label>
                   <input
@@ -160,8 +163,8 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="https://www.linkedin.com/in/name"
-                    name="linked_in"
-                    value={formState.linked_in}
+                    name="linkedIn"
+                    value={formState.linkedIn}
                     onChange={handleForm}
                   />
                 </section>
@@ -181,9 +184,12 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <label className="block font-bold mb-2 text-lg">
                     Graduation Quote
                   </label>
+                  <label className="block mb-2 text-sm">
+                    (Without quotation marks)
+                  </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder='"How do I center a div?"'
+                    placeholder="How do I center a div?"
                     name="quote"
                     value={formState.quote}
                     onChange={handleForm}
@@ -201,21 +207,30 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                     onChange={handleForm}
                   />
                 </section>
-                <button
-                  type="submit"
-                  className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
-                >
-                  Save Changes
-                </button>
-                {/* {isEditing ? (
+                {!isEditing ? (
+                  <button
+                    type="submit"
+                    className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
+                  >
+                    Create Profile
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8 mr-4"
+                  >
+                    Save Changes
+                  </button>
+                )}
+                {isEditing ? (
                   <button
                     aria-label="Delete"
-                    className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
+                    className="bg-pink text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
                     onClick={handleDelete}
                   >
                     Delete
                   </button>
-                ) : null} */}
+                ) : null}
               </div>
             </div>
           </div>

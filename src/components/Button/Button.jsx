@@ -4,11 +4,10 @@ import { useUser } from '../../context/UserContext';
 // import { signOutUser } from '../../services/users';
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { useProfile } from '../../hooks/useProfile';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Button() {
-  const { profile } = useProfile();
-  const { user } = useUser();
+  const { id } = useParams();
   const history = useHistory();
 
   const handleSignOut = async () => {
@@ -42,37 +41,11 @@ export default function Button() {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-purple divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border-2 border-white">
-            {/* {!profile ? ( */}
             <div className="px-1 py-1">
               <Menu.Item>
                 {({ active }) => (
                   <a
-                    href="/profile/create"
-                    className={`${
-                      active ? 'text-teal' : 'text-white'
-                    } group flex rounded-md items-center w-full px-2 py-2 text-md`}
-                  >
-                    {active ? (
-                      <DuplicateActiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <DuplicateInactiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    )}
-                    Create Profile
-                  </a>
-                )}
-              </Menu.Item>
-            </div>
-            {/* ) : ( */}
-            <div className="px-1 py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
+                    href="/profile/"
                     className={`${
                       active ? 'text-teal' : 'text-white'
                     } group flex rounded-md items-center w-full px-2 py-2 text-md`}
@@ -88,12 +61,11 @@ export default function Button() {
                         aria-hidden="true"
                       />
                     )}
-                    Edit Profile
-                  </button>
+                    Go to Profile
+                  </a>
                 )}
               </Menu.Item>
             </div>
-            {/* )} */}
             <div className="px-1 py-1">
               <div>
                 <Menu.Item>

@@ -6,13 +6,14 @@ function useProfile(id) {
   const [profile, setProfile] = useState({
     id: '',
     avatar: '',
-    first_name: '',
-    last_name: '',
-    linked_in: '',
+    firstName: '',
+    lastName: '',
+    linkedIn: '',
     github: '',
     quote: '',
     company: '',
     email: '',
+    pronoun: '',
   });
   const [loading, setLoading] = useState(true);
   // we might need to grab our user and put it into the dependency array
@@ -25,13 +26,14 @@ function useProfile(id) {
       } catch (error) {
         setProfile({
           avatar: '',
-          first_name: '',
-          last_name: '',
-          linked_in: '',
+          firstName: '',
+          lastName: '',
+          linkedIn: '',
           github: '',
           quote: '',
           company: '',
           email: '',
+          pronoun: '',
         });
       } finally {
         setLoading(false);

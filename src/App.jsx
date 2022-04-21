@@ -3,7 +3,7 @@ import styles from './App.module.css'; /* CSS Modules */
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './views/Home/Home';
 import Yearbook from './views/Yearbook/Yearbook';
-// import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Memorybook from './views/Memorybook/Memorybook';
 import About from './views/About/About';
 import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
@@ -12,7 +12,11 @@ import Auth from './views/Auth/Auth';
 import { UserProvider } from './context/UserContext';
 import Navbar from './components/Navbar/Navbar';
 import AlumAdvice from './views/AlumAdvice/AlumAdvice';
+
 import AlumAdviceCreate from './views/AlumAdviceCreate/AlumAdviceCreate';
+
+import Profile from './views/Profile/Profile';
+
 
 function App() {
   return (
@@ -29,18 +33,26 @@ function App() {
           <Route exact path="/yearbook">
             <Yearbook />
           </Route>
+          <Route exact path="/advice">
+            <AlumAdvice />
+          </Route>
           <Route exact path="/profile/create">
             <ProfileCreateEdit />
           </Route>
-          <Route exact path="/advice/">
-            <AlumAdvice />
+          <Route exact path="/profile/">
+            <Profile />
           </Route>
+          <Route exact path="/profile/:id/edit">
+            <ProfileCreateEdit isEditing />
+          </Route>
+
           <Route exact path="/advice/create">
             <AlumAdviceCreate />
           </Route>
           {/* <PrivateRoute exact path="/profile/:id/edit">
             <YearCreateEdit isEditing />
           </PrivateRoute> */}
+
           <Route exact path="/memorybook">
             <Memorybook />
           </Route>

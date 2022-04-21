@@ -13,6 +13,12 @@ export default function Memorybook() {
       <div class="wrapper">
         <div class="item">
           <div class="polaroid">
+            <img src="https://i.ibb.co/qB7Pw9w/IMG-9759.jpg" />
+            <div class="caption">When the code</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="polaroid">
             <img src="https://emoji.slack-edge.com/T6FCZF1HR/potato-head/6c637bbe90391dfd.png" />
             <div class="caption">Dan's Potato</div>
             <div class="caption">- Dan</div>
@@ -23,13 +29,6 @@ export default function Memorybook() {
           <div class="polaroid">
             <img src="https://i.ibb.co/mSCTRvQ/creeper.jpg" />
             <div class="caption">Phoenix Nicholson</div>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="polaroid">
-            <img src="https://i.ibb.co/8XkQ9nw/IMG-10-EDF5-C11-CD4-1.jpg" />
-            <div class="caption">When the code</div>
           </div>
         </div>
 
