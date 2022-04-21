@@ -12,6 +12,7 @@ import Auth from './views/Auth/Auth';
 import { UserProvider } from './context/UserContext';
 import Navbar from './components/Navbar/Navbar';
 import AlumAdvice from './views/AlumAdvice/AlumAdvice';
+import AlumAdviceCreate from './views/AlumAdviceCreate/AlumAdviceCreate';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
             <AlumAdvice />
           </Route>
           <Route exact path="/advice/create">
-            <AlumAdvice />
+            <AlumAdviceCreate />
           </Route>
           {/* <PrivateRoute exact path="/profile/:id/edit">
             <YearCreateEdit isEditing />
@@ -45,7 +46,6 @@ function App() {
           </Route>
           <Route exact path="/memorybook/create">
             <MemCreateEdit />
-
           </Route>
           {/* <PrivateRoute exact path="/memorybook/:id/edit">
 
