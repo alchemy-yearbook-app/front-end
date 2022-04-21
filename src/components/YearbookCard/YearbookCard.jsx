@@ -13,7 +13,7 @@ export default function YearbookCard({ alumni }) {
               <div className="absolute -mt-20 w-full flex justify-center">
                 <div className="h-32 w-32">
                   <img
-                    src={item.avatar_url}
+                    src={item.avatarUrl}
                     alt="Display Picture"
                     role="img"
                     className="rounded-full object-cover h-full w-full shadow-xl"
@@ -25,7 +25,7 @@ export default function YearbookCard({ alumni }) {
                   {item.login}
                 </h1>
                 <div className="w-full flex justify-center pt-5 pb-5">
-                  <a href={item.html_url} target="_blank" className="mx-5">
+                  <a href={item.htmlUrl} target="_blank" className="mx-5">
                     <div
                       aria-label="Github"
                       role="img"

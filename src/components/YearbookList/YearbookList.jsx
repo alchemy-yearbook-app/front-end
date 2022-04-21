@@ -32,7 +32,7 @@ export default function YearbookList() {
     };
     fetchData();
   }, []);
-
+  console.log('alumni', alumni);
   if (loading) {
     return <div></div>;
   }
