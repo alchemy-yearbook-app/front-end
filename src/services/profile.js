@@ -19,14 +19,14 @@ export const getProfileById = async ({ user_id }) => {
 
 export const createProfile = async ({
   avatar,
-  first_name,
-  last_name,
-  pronouns,
-  linked_in,
+  firstName,
+  lastName,
+  linkedIn,
   github,
   quote,
   company,
   email,
+  pronoun,
 }) => {
   const res = await fetch(`${process.env.API_URL}/api/v1/profile/create`, {
     method: 'POST',
@@ -35,30 +35,31 @@ export const createProfile = async ({
     mode: 'cors',
     body: JSON.stringify({
       avatar,
-      first_name,
-      last_name,
-      pronouns,
-      linked_in,
+      firstName,
+      lastName,
+      linkedIn,
       github,
       quote,
       company,
       email,
+      pronoun,
     }),
   });
-  console.log('res.json()', res.json());
-  return res.json();
+  const data = await res.json();
+  return data;
 };
 
 export const updateProfile = async ({
   id,
   avatar,
-  first_name,
-  last_name,
-  linked_in,
+  firstName,
+  lastName,
+  linkedIn,
   github,
   quote,
   company,
   email,
+  pronoun,
 }) => {
   const res = await fetch(
     `${process.env.API_URL}/api/v1/profile/${profile.id}`,
@@ -70,13 +71,14 @@ export const updateProfile = async ({
       body: JSON.stringify({
         id,
         avatar,
-        first_name,
-        last_name,
-        linked_in,
+        firstName,
+        lastName,
+        linkedIn,
         github,
         quote,
         company,
         email,
+        pronoun,
       }),
     }
   );

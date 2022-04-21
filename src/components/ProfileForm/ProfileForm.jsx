@@ -2,54 +2,56 @@ import React, { useEffect } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { useProfile } from '../../hooks/useProfile';
 import { getProfileById } from '../../services/profile';
+import { useHistory } from 'react-router-dom';
 
 // useUser hook (refactor later)
 export default function ProfileForm({ isEditing, onSubmit, user }) {
   const { profile, setProfile } = useProfile(user.uuid);
-
+  const history = useHistory();
   const { formState, handleForm, setFormState, setFormError, formError } =
     useForm({
-      // avatar: '',
-      first_name: '',
-      last_name: '',
-      pronouns: '',
-      linked_in: '',
+      avatar: '',
+      firstName: '',
+      lastName: '',
+      linkedIn: '',
       github: '',
       quote: '',
       company: '',
       email: '',
+      pronoun: '',
     });
 
   useEffect(() => {
+    console.log('profile', profile);
     setFormState(profile);
   }, [profile]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const {
-      // avatar,
-      first_name,
-      last_name,
-      pronouns,
-      linked_in,
+      avatar,
+      firstName,
+      lastName,
+      linkedIn,
       github,
       quote,
       company,
       email,
+      pronoun,
     } = formState;
     try {
       if (isEditing) {
         await onSubmit({
           id,
-          // avatar,
-          first_name,
-          last_name,
-          pronouns,
-          linked_in,
+          avatar,
+          firstName,
+          lastName,
+          linkedIn,
           github,
           quote,
           company,
           email,
+          pronoun,
         });
         const resp = await getProfileById(user.uuid);
         setProfile(resp);
@@ -57,14 +59,14 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
       } else {
         await onSubmit({
           avatar,
-          first_name,
-          last_name,
-          pronouns,
-          linked_in,
+          firstName,
+          lastName,
+          linkedIn,
           github,
           quote,
           company,
           email,
+          pronoun,
         });
         history.replace(`/yearbook`);
       }
@@ -97,9 +99,9 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     id="firstName"
-                    name="first_name"
+                    name="firstName"
                     placeholder="First Name"
-                    value={formState.first_name}
+                    value={formState.firstName}
                     onChange={handleForm}
                   />
                 </section>
@@ -109,9 +111,9 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    name="last_name"
+                    name="lastName"
                     placeholder="Last Name"
-                    value={formState.last_name}
+                    value={formState.lastName}
                     onChange={handleForm}
                   />
                 </section>
@@ -122,12 +124,12 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="he/him, she/her, they/them"
-                    name="pronouns"
-                    value={formState.pronouns}
+                    name="pronoun"
+                    value={formState.pronoun}
                     onChange={handleForm}
                   />
                 </section>
-                {/* <section>
+                <section>
                   <label className="block font-bold mb-2 text-lg">
                     Profile Picture URL
                   </label>
@@ -142,7 +144,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                     value={formState.avatar}
                     onChange={handleForm}
                   />
-                </section> */}
+                </section>
                 <section>
                   <label className="block font-bold mb-2 text-lg">Email</label>
                   <input
@@ -160,8 +162,8 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="https://www.linkedin.com/in/name"
-                    name="linked_in"
-                    value={formState.linked_in}
+                    name="linkedIn"
+                    value={formState.linkedIn}
                     onChange={handleForm}
                   />
                 </section>

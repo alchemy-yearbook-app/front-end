@@ -23,40 +23,40 @@ export default function ProfileCreateEdit({ isEditing = false }) {
   const handleProfileForm = async ({
     id,
     avatar,
-    first_name,
-    last_name,
-    pronouns,
-    linked_in,
+    firstName,
+    lastName,
+    linkedIn,
     github,
     quote,
     company,
     email,
+    pronoun,
   }) => {
     try {
       if (isEditing) {
         await updateProfile({
           id,
           avatar,
-          first_name,
-          last_name,
-          pronouns,
-          linked_in,
+          firstName,
+          lastName,
+          linkedIn,
           github,
           quote,
           company,
           email,
+          pronoun,
         });
       } else {
         await createProfile({
           avatar,
-          first_name,
-          last_name,
-          pronouns,
-          linked_in,
+          firstName,
+          lastName,
+          linkedIn,
           github,
           quote,
           company,
           email,
+          pronoun,
         });
       }
     } catch (error) {
