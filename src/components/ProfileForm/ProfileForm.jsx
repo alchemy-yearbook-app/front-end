@@ -214,9 +214,9 @@ export default function ProfileForm({ isEditing, onSubmit }) {
                 ) : (
                   <button
                     type="submit"
-                    className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
+                    className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8 mr-4"
                   >
-                    Edit Profile
+                    Save Changes
                   </button>
                 )}
                 {isEditing ? (
