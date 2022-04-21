@@ -12,7 +12,11 @@ import Auth from './views/Auth/Auth';
 import { UserProvider } from './context/UserContext';
 import Navbar from './components/Navbar/Navbar';
 import AlumAdvice from './views/AlumAdvice/AlumAdvice';
+
+import AlumAdviceCreate from './views/AlumAdviceCreate/AlumAdviceCreate';
+
 import Profile from './views/Profile/Profile';
+
 
 function App() {
   return (
@@ -41,6 +45,14 @@ function App() {
           <Route exact path="/profile/:id/edit">
             <ProfileCreateEdit isEditing />
           </Route>
+
+          <Route exact path="/advice/create">
+            <AlumAdviceCreate />
+          </Route>
+          {/* <PrivateRoute exact path="/profile/:id/edit">
+            <YearCreateEdit isEditing />
+          </PrivateRoute> */}
+
           <Route exact path="/memorybook">
             <Memorybook />
           </Route>
