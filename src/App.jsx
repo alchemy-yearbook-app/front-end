@@ -34,6 +34,9 @@ function App() {
           <Route exact path="/advice/">
             <AlumAdvice />
           </Route>
+          <Route exact path="/advice/create">
+            <AlumAdvice />
+          </Route>
           {/* <PrivateRoute exact path="/profile/:id/edit">
             <YearCreateEdit isEditing />
           </PrivateRoute> */}
