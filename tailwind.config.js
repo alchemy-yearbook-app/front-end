@@ -18,7 +18,7 @@ module.exports = {
       darkteal: '#8ebec9',
       teal: '#a3e4e5',
       white: '#fcfade',
-      grey: '#808080',
+      grey: '#718096',
       black: '#000',
     },
   },

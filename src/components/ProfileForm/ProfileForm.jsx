@@ -58,7 +58,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
         });
         const resp = await getProfileById(id);
         setProfile(resp);
-        history.replace(`/yearbook`);
+        history.replace(`/cohort`);
       } else {
         await onSubmit({
           avatar,
@@ -78,13 +78,11 @@ export default function ProfileForm({ isEditing, onSubmit }) {
     }
   };
 
-
   const handleDelete = async (e) => {
     e.preventDefault();
     await deleteJob(id);
     history.replace('/profile');
   };
-
 
   return (
     <>
