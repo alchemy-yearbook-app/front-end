@@ -2,12 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MemoryList from '../../components/MemoryList/MemoryList';
 import { fetchMemory } from '../../services/memorybook';
+import { getCurrentUser } from '../../services/users';
 import './Memorybook.css';
 
 export default function Memorybook() {
+  const [user, setUser] = useState({});
   const [memorybook, setMemorybook] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getCurrentUser();
+      setUser(data);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+  console.log('user', user);
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchMemory();
@@ -20,7 +31,7 @@ export default function Memorybook() {
   if (loading) {
     return <h3></h3>;
   }
-
+  console.log('memorybook', memorybook);
   return (
     <div>
       <div className="w-full flex align-middle justify-center">
