@@ -1,5 +1,3 @@
-// import { data } from 'autoprefixer';
-
 export const createAdvice = async ({ title, advice, alumniName, cohort }) => {
   const res = await fetch(`${process.env.API_URL}/api/v1/advice/create`, {
     method: 'POST',
