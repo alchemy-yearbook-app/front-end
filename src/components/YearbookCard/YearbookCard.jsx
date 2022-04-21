@@ -13,7 +13,7 @@ export default function YearbookCard({ alumni }) {
               <div className="absolute -mt-20 w-full flex justify-center">
                 <div className="h-32 w-32">
                   <img
-                    src={item.avatar_url}
+                    src={item.avatar}
                     alt="Display Picture"
                     role="img"
                     className="rounded-full object-cover h-full w-full shadow-xl"
