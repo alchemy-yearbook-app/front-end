@@ -1,6 +1,7 @@
 import { data } from 'autoprefixer';
 import React, { useState, useEffect } from 'react';
 import AlumAdvices from '../../components/AlumAdvice/AlumAdvices';
+
 import { createAdvice, getAdvice } from '../../services/advice';
 
 export default function AlumAdvice() {
@@ -12,6 +13,7 @@ export default function AlumAdvice() {
       const data = await getAdvice();
       setAdvice(data);
       setLoading(false);
+      console.log('data', data);
     };
     fetchData();
   }, []);
