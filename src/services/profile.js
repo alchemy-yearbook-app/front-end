@@ -10,9 +10,9 @@ export const getProfileById = async ({ user_id }) => {
         },
       }
     );
-
     return res.json();
   } catch (error) {
+    console.log('error', error);
     return null;
   }
 };
