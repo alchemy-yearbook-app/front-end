@@ -184,9 +184,12 @@ export default function ProfileForm({ isEditing, onSubmit }) {
                   <label className="block font-bold mb-2 text-lg">
                     Graduation Quote
                   </label>
+                  <label className="block mb-2 text-sm">
+                    (Without quotation marks)
+                  </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder='"How do I center a div?"'
+                    placeholder="How do I center a div?"
                     name="quote"
                     value={formState.quote}
                     onChange={handleForm}
