@@ -77,11 +77,14 @@ export default function ProfileForm({ isEditing, onSubmit }) {
       setFormError('Error please try again');
     }
   };
+
+
   const handleDelete = async (e) => {
     e.preventDefault();
     await deleteJob(id);
     history.replace('/profile');
   };
+
 
   return (
     <>

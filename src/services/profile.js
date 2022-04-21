@@ -28,6 +28,7 @@ export const createProfile = async ({
   email,
   pronoun,
 }) => {
+
   const res = await fetch(`${process.env.API_URL}/api/v1/profile/create`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
