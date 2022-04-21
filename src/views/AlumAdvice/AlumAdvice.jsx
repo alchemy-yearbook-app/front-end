@@ -12,6 +12,7 @@ export default function AlumAdvice() {
       const data = await getAdvice();
       setAdvice(data);
       setLoading(false);
+      console.log('data', data);
     };
     fetchData();
     console.log('advice', advice);
