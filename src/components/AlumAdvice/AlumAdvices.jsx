@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { getAdvice } from '../../services/advice';
 
-export default function AlumAdvices() {
+export default function AlumAdvices({ advices }) {
+  console.log('advices', advices);
   return (
     <div class="mx-auto container py-20 px-6">
+      <div>
+        <button
+          type="submit"
+          className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
+        >
+          Add Advice
+        </button>
+      </div>
       <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <div class="rounded">
           <div class="w-full h-64 flex flex-col justify-between dark:bg-gray-800 bg-white dark:border-gray-700 rounded-lg border border-gray-400 mb-6 py-5 px-4">
