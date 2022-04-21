@@ -1,4 +1,6 @@
-export const createAdvice = async ({ title, advice, alumni_name, cohort }) => {
+// import { data } from 'autoprefixer';
+
+export const createAdvice = async ({ title, advice, alumniName, cohort }) => {
   const res = await fetch(`${process.env.API_URL}/api/v1/advice/create`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -7,10 +9,19 @@ export const createAdvice = async ({ title, advice, alumni_name, cohort }) => {
     body: JSON.stringify({
       title,
       advice,
-      alumni_name,
+      alumniName,
       cohort,
     }),
   });
   console.log('res.json()', res.json());
   return res.json();
+};
+
+export const getAdvice = async () => {
+  const resp = await fetch(
+    'https://alchemy-yearbook-app-2.herokuapp.com/api/v1/advice'
+  );
+  const data = await resp.json();
+  console.log('resp', resp);
+  return data;
 };
