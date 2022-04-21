@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { getAdvice } from '../../services/advice';
 
 export default function AlumAdvices({ advices }) {
-  console.log('advices', advices);
   return (
     <div class="mx-auto container py-20 px-6">
+      <h1>hello world</h1>
+      {advices.map((advice) => (
+        <div key={advice.id}>
+          <p>{advice.title} </p>
+        </div>
+      ))}
       <div>
         <button
           type="submit"
