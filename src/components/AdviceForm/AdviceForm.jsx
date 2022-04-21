@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from '../../hooks/useForm';
+import { createAdvice } from '../../services/advice';
 
 export default function () {
   const { formState, handleForm, setFormState, setFormError, formError } =
@@ -7,9 +8,25 @@ export default function () {
       // avatar: '',
       title: '',
       advice: '',
-      alumni_name: '',
+      alumniName: '',
       cohort: '',
     });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { title, advice, alumniName, cohort } = formState;
+    try {
+      const resp = await createAdvice({
+        title,
+        advice,
+        alumniName,
+        cohort,
+      });
+      return resp;
+    } catch (error) {
+      throw error;
+    }
+  };
 
   return (
     <>
@@ -22,10 +39,11 @@ export default function () {
                   <label className="block font-bold mb-2 text-lg">Title</label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id="adviceTitle"
-                    name="advice_title"
+                    id="title"
+                    name="title"
                     placeholder="Enter Title"
                     value={formState.title}
+                    onChange={handleForm}
                   />
                 </section>
 
@@ -37,6 +55,7 @@ export default function () {
                     name="advice"
                     placeholder="Advice for current students"
                     value={formState.advice}
+                    onChange={handleForm}
                   />
                 </section>
 
@@ -46,10 +65,11 @@ export default function () {
                   </label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id="alumni_name"
-                    name="alumni_name"
+                    id="alumniName"
+                    name="alumniName"
                     placeholder="What's your name"
-                    value={formState.alumni_name}
+                    value={formState.alumniName}
+                    onChange={handleForm}
                   />
                 </section>
 
@@ -61,11 +81,13 @@ export default function () {
                     name="cohort"
                     placeholder="What cohort were you apart of ? "
                     value={formState.cohort}
+                    onChange={handleForm}
                   />
                 </section>
 
                 <button
                   type="submit"
+                  onSubmit={handleSubmit}
                   className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
                 >
                   Share Advice
