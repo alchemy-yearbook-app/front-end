@@ -42,6 +42,7 @@ export const fetchYearbookProfiles = async () => {
 export const fetchYourCohort = async () => {
   try {
     const resp = await fetch(`${process.env.API_URL}/api/v1/profile/us`, {
+
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

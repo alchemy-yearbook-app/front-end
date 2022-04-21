@@ -5,12 +5,20 @@ import './Memorybook.css';
 export default function Memorybook() {
   return (
     <div>
-      <Link to="/memorybook/create">
-        <button className="bg-blue-500 hover:bg-blue-700 py-0.3 text-white font-bold rounded focus:outline-none focus:shadow-outline">
-          Add Memory
-        </button>
-      </Link>
+      <div className="w-full flex align-middle justify-center">
+        <Link to="/memorybook/create">
+          <button className="border-2 p-2 py-0.3 text-white font-bold rounded focus:outline-none focus:shadow-outline bg-purple hover:bg-darkerpurple">
+            Add Memory
+          </button>
+        </Link>
+      </div>
       <div class="wrapper">
+        <div class="item">
+          <div class="polaroid">
+            <img src="https://i.ibb.co/qB7Pw9w/IMG-9759.jpg" />
+            <div class="caption">When the code</div>
+          </div>
+        </div>
         <div class="item">
           <div class="polaroid">
             <img src="https://emoji.slack-edge.com/T6FCZF1HR/potato-head/6c637bbe90391dfd.png" />
@@ -23,13 +31,6 @@ export default function Memorybook() {
           <div class="polaroid">
             <img src="https://i.ibb.co/mSCTRvQ/creeper.jpg" />
             <div class="caption">Phoenix Nicholson</div>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="polaroid">
-            <img src="https://i.ibb.co/8XkQ9nw/IMG-10-EDF5-C11-CD4-1.jpg" />
-            <div class="caption">When the code</div>
           </div>
         </div>
 

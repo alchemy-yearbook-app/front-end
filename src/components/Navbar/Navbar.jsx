@@ -1,5 +1,6 @@
 import React from 'react';
 import { useUser } from '../../context/UserContext';
+import { useProfile } from '../../hooks/useProfile';
 import Button from '../Button/Button';
 
 export default function Navbar() {
@@ -33,6 +34,7 @@ export default function Navbar() {
             </li>
             <li className="md:px-4 md:py-2 hover:text-teal">
               <a href="/cohort">Cohorts</a>
+              <a href="/yearbook">Yearbook</a>
             </li>
             <li className="md:px-4 md:py-2 hover:text-teal">
               <a href="/advice">Alumni Advice</a>

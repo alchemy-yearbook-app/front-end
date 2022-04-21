@@ -14,6 +14,11 @@ import Navbar from './components/Navbar/Navbar';
 import AlumAdvice from './views/AlumAdvice/AlumAdvice';
 import Cohort from './views/Cohort/Cohort';
 
+import AlumAdviceCreate from './views/AlumAdviceCreate/AlumAdviceCreate';
+
+import Profile from './views/Profile/Profile';
+
+
 function App() {
   return (
     <Router>
@@ -31,16 +36,30 @@ function App() {
           </Route>
           <Route exact path="/cohort">
             <Cohort />
+          <Route exact path="/advice">
+            <AlumAdvice />
           </Route>
           <Route exact path="/profile/create">
             <ProfileCreateEdit />
           </Route>
-          <Route exact path="/advice/">
-            <AlumAdvice />
+          <Route exact path="/profile/">
+            <Profile />
           </Route>
+          <Route exact path="/profile/:id/edit">
+            <ProfileCreateEdit isEditing />
+          </Route>
+
+          <Route exact path="/advice/create">
+            <AlumAdviceCreate />
+          </Route>
+
           <PrivateRoute exact path="/profile/:id/edit">
             <ProfileCreateEdit isEditing />
           </PrivateRoute>
+          {/* <PrivateRoute exact path="/profile/:id/edit">
+            <YearCreateEdit isEditing />
+          </PrivateRoute> */}
+
           <Route exact path="/memorybook">
             <Memorybook />
           </Route>

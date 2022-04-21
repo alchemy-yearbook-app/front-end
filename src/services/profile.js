@@ -10,92 +10,90 @@ export const getProfileById = async ({ user_id }) => {
         },
       }
     );
-
     return res.json();
   } catch (error) {
+    console.log('error', error);
     return null;
   }
 };
 
 export const createProfile = async ({
   avatar,
-  first_name,
-  last_name,
-  pronouns,
-  linked_in,
+  firstName,
+  lastName,
+  linkedIn,
   github,
   quote,
   company,
   email,
+  pronoun,
 }) => {
-  try {
-    const res = await fetch(`${process.env.API_URL}/api/v1/profile/create`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      mode: 'cors',
-      body: JSON.stringify({
-        avatar,
-        first_name,
-        last_name,
-        pronouns,
-        linked_in,
-        github,
-        quote,
-        company,
-        email,
-      }),
-    });
-    const data = res.json();
-    console.log('data', data);
-    return data;
-  } catch (error) {
-    return null;
-  }
+
+  const res = await fetch(`${process.env.API_URL}/api/v1/profile/create`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+    body: JSON.stringify({
+      avatar,
+      firstName,
+      lastName,
+      linkedIn,
+      github,
+      quote,
+      company,
+      email,
+      pronoun,
+    }),
+  });
+  const data = await res.json();
+  return data;
 };
 
 export const updateProfile = async ({
   id,
   avatar,
-  first_name,
-  last_name,
-  linked_in,
+  firstName,
+  lastName,
+  linkedIn,
   github,
   quote,
   company,
   email,
+  pronoun,
 }) => {
-  const res = await fetch(
-    `${process.env.API_URL}/api/v1/profile/${profile.id}`,
-    {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      mode: 'cors',
-      body: JSON.stringify({
-        id,
-        avatar,
-        first_name,
-        last_name,
-        linked_in,
-        github,
-        quote,
-        company,
-        email,
-      }),
-    }
-  );
+  const res = await fetch(`${process.env.API_URL}/api/v1/profile/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+    body: JSON.stringify({
+      id,
+      avatar,
+      firstName,
+      lastName,
+      linkedIn,
+      github,
+      quote,
+      company,
+      email,
+      pronoun,
+    }),
+  });
 
   return res.json();
 };
 
 export const deleteProfile = async (id) => {
-  const res = await fetch(`${process.env.API_URL}/api/v1/profile/${id}`, {
-    method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    mode: 'cors',
-  });
+  const res = await fetch(
+    `${process.env.API_URL}/api/v1/profile/${profile.id}`,
+    {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+    }
+  );
 
   return res.ok;
 };
