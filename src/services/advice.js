@@ -12,14 +12,22 @@ export const createAdvice = async ({ title, advice, alumniName, cohort }) => {
     }),
   });
   console.log('res.json()', res.json());
-  return res.json();
+  const data = await res.json;
+  return data;
 };
 
 export const getAdvice = async () => {
-  const resp = await fetch(
-    'https://alchemy-yearbook-app-2.herokuapp.com/api/v1/advice'
-  );
-  const data = await resp.json();
-  console.log('resp', resp);
-  return data;
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/v1/advice`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+    });
+    const advice = await res.json();
+    console.log('advice', advice);
+    return advice;
+  } catch (error) {
+    return null;
+  }
 };

@@ -14,8 +14,11 @@ export default function AlumAdvice() {
       setLoading(false);
     };
     fetchData();
-    console.log('advice', advice);
   }, []);
+
+  if (loading) {
+    <h1>Loading advice</h1>;
+  }
 
   const handleSubmit = async ({ title, advice, alumni_name, cohort }) => {
     await createAdvice({

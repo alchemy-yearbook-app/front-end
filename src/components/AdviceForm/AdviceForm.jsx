@@ -30,7 +30,7 @@ export default function () {
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="relative py-16 m-auto">
           <div className="relative container px-6 text-gray-500 md:px-12 xl:px-40 m-auto">
             <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
@@ -87,7 +87,6 @@ export default function () {
 
                 <button
                   type="submit"
-                  onSubmit={handleSubmit}
                   className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
                 >
                   Share Advice
