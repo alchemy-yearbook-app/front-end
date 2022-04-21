@@ -1,6 +1,5 @@
 import React from 'react';
 import { useUser } from '../../context/UserContext';
-import { useProfile } from '../../hooks/useProfile';
 import Button from '../Button/Button';
 
 export default function Navbar() {
@@ -33,24 +32,29 @@ export default function Navbar() {
               <a href="/">Home</a>
             </li>
             <li className="md:px-4 md:py-2 hover:text-teal">
-              <a href="/cohort">My Cohort</a>
-            </li>
-            <li className="md:px-4 md:py-2 hover:text-teal">
               <a href="/yearbook">Yearbook</a>
             </li>
-            <li className="md:px-4 md:py-2 hover:text-teal">
-              <a href="/advice">Alumni Advice</a>
-            </li>
-            <li className="md:px-4 md:py-2 hover:text-teal">
-              <a href="/memorybook">Memorybook</a>
-            </li>
+            {user.uuid && (
+              <>
+                <li className="md:px-4 md:py-2 hover:text-teal">
+                  <a href="/cohort">My Cohort</a>
+                </li>
+                <li className="md:px-4 md:py-2 hover:text-teal">
+                  <a href="/advice">Alumni Advice</a>
+                </li>
+                <li className="md:px-4 md:py-2 hover:text-teal">
+                  <a href="/memorybook">Memorybook</a>
+                </li>
+              </>
+            )}
+
             <li className="md:px-4 md:py-2 hover:text-teal">
               <a href="/about">About Us</a>
             </li>
           </ul>
         </div>
         <div className="order-2 md:order-3 text-white hover:text-teal w-20">
-          {!user ? (
+          {!user.token ? (
             <>
               <button className="px-4 py-2 rounded-xl flex items-center gap-2">
                 <svg

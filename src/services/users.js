@@ -1,7 +1,7 @@
 export const getCurrentUser = async () => {
   try {
     // give back user profile
-    const res = await fetch(`${process.env.API_URL}/api/v1/user`, {
+    const res = await fetch(`${process.env.API_URL}/api/v1/github/me`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
