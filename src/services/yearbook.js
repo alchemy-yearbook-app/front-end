@@ -6,9 +6,24 @@ export async function fetchGithubTeams() {
   return data;
 }
 
-export const fetchYearbook = async () => {
+export const fetchYearbookNoProfile = async () => {
   try {
     const resp = await fetch(`${process.env.API_URL}/api/v1/profile/others`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+    });
+    const data = await resp.json();
+    return data;
+  } catch (error) {
+    return null;
+  }
+};
+
+export const fetchYearbookProfiles = async () => {
+  try {
+    const resp = await fetch(`${process.env.API_URL}/api/v1/profile`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

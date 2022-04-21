@@ -72,8 +72,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
       setFormError('Error please try again');
     }
   };
-  console.log('formState', formState);
-  console.log('profile', profile);
+
   // const handleDelete = async (e) => {
   //   e.preventDefault();
   //   await deleteJob(job.id);

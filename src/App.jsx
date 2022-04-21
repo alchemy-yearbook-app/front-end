@@ -3,7 +3,7 @@ import styles from './App.module.css'; /* CSS Modules */
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './views/Home/Home';
 import Yearbook from './views/Yearbook/Yearbook';
-// import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Memorybook from './views/Memorybook/Memorybook';
 import About from './views/About/About';
 import MemCreateEdit from './views/MemCreateEdit/MemCreateEdit';
@@ -34,15 +34,14 @@ function App() {
           <Route exact path="/advice/">
             <AlumAdvice />
           </Route>
-          {/* <PrivateRoute exact path="/profile/:id/edit">
-            <YearCreateEdit isEditing />
-          </PrivateRoute> */}
+          <PrivateRoute exact path="/profile/:id/edit">
+            <ProfileCreateEdit isEditing />
+          </PrivateRoute>
           <Route exact path="/memorybook">
             <Memorybook />
           </Route>
           <Route exact path="/memorybook/create">
             <MemCreateEdit />
-
           </Route>
           {/* <PrivateRoute exact path="/memorybook/:id/edit">
 

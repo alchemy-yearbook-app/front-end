@@ -1,7 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { getCurrentUser, signIn } from '../../services/users';
-import { fetchGithubTeams, fetchYearbook } from '../../services/yearbook';
+import {
+  fetchGithubTeams,
+  fetchYearbookNoProfile,
+} from '../../services/yearbook';
 import YearbookCard from '../YearbookCard/YearbookCard';
 
 export default function YearbookList() {
@@ -29,9 +32,10 @@ export default function YearbookList() {
     fetchData();
   }, []);
 
+  console.log('user', user);
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchYearbook();
+      const data = await fetchYearbookNoProfile();
       setAlumni(data);
       setLoading(false);
     };

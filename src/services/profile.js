@@ -28,25 +28,30 @@ export const createProfile = async ({
   company,
   email,
 }) => {
-  const res = await fetch(`${process.env.API_URL}/api/v1/profile/create`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    mode: 'cors',
-    body: JSON.stringify({
-      avatar,
-      first_name,
-      last_name,
-      pronouns,
-      linked_in,
-      github,
-      quote,
-      company,
-      email,
-    }),
-  });
-  console.log('res.json()', res.json());
-  return res.json();
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/v1/profile/create`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+      body: JSON.stringify({
+        avatar,
+        first_name,
+        last_name,
+        pronouns,
+        linked_in,
+        github,
+        quote,
+        company,
+        email,
+      }),
+    });
+    const data = res.json();
+    console.log('data', data);
+    return data;
+  } catch (error) {
+    return null;
+  }
 };
 
 export const updateProfile = async ({
