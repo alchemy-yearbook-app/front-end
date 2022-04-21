@@ -18,7 +18,6 @@ import AlumAdviceCreate from './views/AlumAdviceCreate/AlumAdviceCreate';
 
 import Profile from './views/Profile/Profile';
 
-
 function App() {
   return (
     <Router>
@@ -36,6 +35,7 @@ function App() {
           </Route>
           <Route exact path="/cohort">
             <Cohort />
+          </Route>
           <Route exact path="/advice">
             <AlumAdvice />
           </Route>
@@ -48,18 +48,15 @@ function App() {
           <Route exact path="/profile/:id/edit">
             <ProfileCreateEdit isEditing />
           </Route>
-
           <Route exact path="/advice/create">
             <AlumAdviceCreate />
           </Route>
-
           <PrivateRoute exact path="/profile/:id/edit">
             <ProfileCreateEdit isEditing />
           </PrivateRoute>
           {/* <PrivateRoute exact path="/profile/:id/edit">
             <YearCreateEdit isEditing />
           </PrivateRoute> */}
-
           <Route exact path="/memorybook">
             <Memorybook />
           </Route>

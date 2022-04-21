@@ -33,7 +33,9 @@ export default function Navbar() {
               <a href="/">Home</a>
             </li>
             <li className="md:px-4 md:py-2 hover:text-teal">
-              <a href="/cohort">Cohorts</a>
+              <a href="/cohort">My Cohort</a>
+            </li>
+            <li className="md:px-4 md:py-2 hover:text-teal">
               <a href="/yearbook">Yearbook</a>
             </li>
             <li className="md:px-4 md:py-2 hover:text-teal">
