@@ -9,13 +9,13 @@ const Pagination = ({ totalAlumni, alumniPerPage, paginate }) => {
 
   return (
     <div>
-      <div>
-        <ul className="text-3xl text-white flex flex-row items-center justify-center">
+      <div className="flex w-full justify-center items-center align-middle">
+        <ul className="text-xl text-white flex flex-row items-center justify-center w-max border-4 border-purple rounded-xl">
           {pageNumbers.map((number) => (
-            <li key={number} className="">
+            <li key={number}>
               <a
                 onClick={() => paginate(number)}
-                className="p-4 border-2 m-4 bg-purple w-16 item-center justify-center flex hover:cursor-pointer"
+                className="h-full p-2 box-content bg-purple w-16 item-center justify-center flex hover:cursor-pointer active:bg-darkerpurple active:rounded-lg focus:bg-darkerpurple focus:ring-darkerpurple "
               >
                 {number}
               </a>
