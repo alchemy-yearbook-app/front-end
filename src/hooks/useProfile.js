@@ -16,7 +16,6 @@ function useProfile(id) {
     pronoun: '',
   });
   const [loading, setLoading] = useState(true);
-  // we might need to grab our user and put it into the dependency array
 
   useEffect(() => {
     const fetchProfile = async () => {

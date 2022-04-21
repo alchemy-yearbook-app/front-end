@@ -1,21 +1,27 @@
 // import createContext, useContext, useState
 import { getCurrentUser } from '../services/users';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const UserContext = createContext();
 
 // create UserProvider - provides context that you are giving
+// return the Provider
 function UserProvider({ children }) {
-  const currentUser = getCurrentUser();
-  const [user, setUser] = useState(
-    currentUser
-      ? {
-          uuid: currentUser.uuid,
-          githubUserId: currentUser.githubUserId,
-          username: currentUser.username,
-        }
-      : {}
-  ); // return the Provider
+  const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getCurrentUser();
+      setUser(data);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div></div>;
+  }
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

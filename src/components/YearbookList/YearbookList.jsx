@@ -10,19 +10,9 @@ import Pagination from '../Pagination/Pagination';
 
 export default function YearbookList() {
   const [alumni, setAlumni] = useState([]);
-  const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [alumniPerPage] = useState(9);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getCurrentUser();
-      setUser(data);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
