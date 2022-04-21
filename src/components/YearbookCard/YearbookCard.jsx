@@ -6,7 +6,7 @@ export default function YearbookCard({ alumni }) {
       {alumni.map((item) => (
         <div
           role="listitem"
-          class="xl:w-1/3 lg:mx-3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5"
+          className="xl:w-1/3 lg:mx-3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5"
         >
           <div className="mt-12 mb-20" key={item.id}>
             <div className="rounded overflow-hidden shadow-2xl bg-white">
