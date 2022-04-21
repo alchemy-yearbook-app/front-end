@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import MemoryList from '../../components/MemoryList/MemoryList';
+import { fetchMemory } from '../../services/memorybook';
 import './Memorybook.css';
 
 export default function Memorybook() {
+  const [memorybook, setMemorybook] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchMemory();
+      setMemorybook(data);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <h3></h3>;
+  }
+
   return (
     <div>
       <div className="w-full flex align-middle justify-center">
@@ -13,13 +31,15 @@ export default function Memorybook() {
         </Link>
       </div>
       <div class="wrapper">
-        <div class="item">
+        <MemoryList memorybook={memorybook} />
+
+        {/* <div class="item">
           <div class="polaroid">
             <img src="https://i.ibb.co/qB7Pw9w/IMG-9759.jpg" />
             <div class="caption">When the code</div>
           </div>
-        </div>
-        <div class="item">
+        </div> */}
+        {/* <div class="item">
           <div class="polaroid">
             <img src="https://emoji.slack-edge.com/T6FCZF1HR/potato-head/6c637bbe90391dfd.png" />
             <div class="caption">Dan's Potato</div>
@@ -39,41 +59,7 @@ export default function Memorybook() {
             <img src="https://i.ibb.co/12KjvzC/Screen-Shot-2022-04-11-at-9-21-40-AM.png" />
             <div class="caption">7 foot tall</div>
           </div>
-        </div>
-
-        <div class="item">
-          <div class="polaroid">
-            <img src="https://i.ibb.co/2khXVR2/8806-revivedge.gif" />
-            <div class="caption">Deadge</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="polaroid">
-            <img src="https://i.ibb.co/12KjvzC/Screen-Shot-2022-04-11-at-9-21-40-AM.png" />
-            <div class="caption">7 foot tall</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="polaroid">
-            <img src="https://i.ibb.co/12KjvzC/Screen-Shot-2022-04-11-at-9-21-40-AM.png" />
-            <div class="caption">7 foot tall</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="polaroid">
-            <img src="https://i.ibb.co/12KjvzC/Screen-Shot-2022-04-11-at-9-21-40-AM.png" />
-            <div class="caption">7 foot tall</div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="polaroid">
-            <div class="caption">
-              7 foot tall 7 foot tall 7 foot tall 7 foot tall 7 foot tall 7 foot
-              tall 7 foot tall 7 foot tall 7 foot tall 7 foot tall 7 foot tall 7
-              foot tall 7 foot tall 7 foot tall
-            </div>
-          </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
