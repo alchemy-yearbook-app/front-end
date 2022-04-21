@@ -8,7 +8,7 @@ export async function fetchGithubTeams() {
 
 export const fetchYearbook = async () => {
   try {
-    const resp = await fetch(`${process.env.API_URL}/api/v1/profile/others`, {
+    const resp = await fetch(`${process.env.API_URL}/api/v1/profile/`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

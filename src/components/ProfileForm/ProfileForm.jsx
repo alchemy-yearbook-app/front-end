@@ -3,10 +3,12 @@ import { useForm } from '../../hooks/useForm';
 import { useProfile } from '../../hooks/useProfile';
 import { getProfileById } from '../../services/profile';
 import { useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // useUser hook (refactor later)
-export default function ProfileForm({ isEditing, onSubmit, user }) {
-  const { profile, setProfile } = useProfile(user.uuid);
+export default function ProfileForm({ isEditing, onSubmit }) {
+  const { id } = useParams();
+  const { profile, setProfile } = useProfile(id);
   const history = useHistory();
   const { formState, handleForm, setFormState, setFormError, formError } =
     useForm({
@@ -22,10 +24,11 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
     });
 
   useEffect(() => {
-    console.log('profile', profile);
     setFormState(profile);
   }, [profile]);
 
+  console.log('profile', profile);
+  console.log('id', id);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const {
@@ -53,7 +56,7 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
           email,
           pronoun,
         });
-        const resp = await getProfileById(user.uuid);
+        const resp = await getProfileById(id);
         setProfile(resp);
         history.replace(`/yearbook`);
       } else {
@@ -74,13 +77,11 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
       setFormError('Error please try again');
     }
   };
-  console.log('formState', formState);
-  console.log('profile', profile);
-  // const handleDelete = async (e) => {
-  //   e.preventDefault();
-  //   await deleteJob(job.id);
-  //   history.replace('/profile');
-  // };
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    await deleteJob(id);
+    history.replace('/profile');
+  };
 
   return (
     <>
@@ -203,21 +204,30 @@ export default function ProfileForm({ isEditing, onSubmit, user }) {
                     onChange={handleForm}
                   />
                 </section>
-                <button
-                  type="submit"
-                  className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
-                >
-                  Save Changes
-                </button>
-                {/* {isEditing ? (
+                {!isEditing ? (
+                  <button
+                    type="submit"
+                    className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
+                  >
+                    Create Profile
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
+                  >
+                    Edit Profile
+                  </button>
+                )}
+                {isEditing ? (
                   <button
                     aria-label="Delete"
-                    className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
+                    className="bg-pink text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
                     onClick={handleDelete}
                   >
                     Delete
                   </button>
-                ) : null} */}
+                ) : null}
               </div>
             </div>
           </div>
