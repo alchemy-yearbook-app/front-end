@@ -71,6 +71,7 @@ export default function Button() {
                 <Menu.Item>
                   {({ active }) => (
                     <button
+                      onClick={handleSignOut}
                       className={`${
                         active ? ' text-teal' : 'text-white'
                       } group flex rounded-md items-center w-full px-2 py-2 text-md`}
