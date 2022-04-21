@@ -12,6 +12,7 @@ import Auth from './views/Auth/Auth';
 import { UserProvider } from './context/UserContext';
 import Navbar from './components/Navbar/Navbar';
 import AlumAdvice from './views/AlumAdvice/AlumAdvice';
+import Cohort from './views/Cohort/Cohort';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/yearbook">
             <Yearbook />
+          </Route>
+          <Route exact path="/cohort">
+            <Cohort />
           </Route>
           <Route exact path="/profile/create">
             <ProfileCreateEdit />

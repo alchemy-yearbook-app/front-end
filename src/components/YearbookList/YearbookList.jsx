@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { getCurrentUser, signIn } from '../../services/users';
+import { getCurrentUser } from '../../services/users';
 import {
   fetchGithubTeams,
   fetchYearbookNoProfile,
@@ -14,14 +14,14 @@ export default function YearbookList() {
 
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchGithubTeams();
-      setCohort(data);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await fetchGithubTeams();
+  //     setCohort(data);
+  //     setLoading(false);
+  //   };
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,7 +32,6 @@ export default function YearbookList() {
     fetchData();
   }, []);
 
-  console.log('user', user);
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchYearbookNoProfile();
@@ -42,10 +41,12 @@ export default function YearbookList() {
     fetchData();
   }, []);
 
+  console.log('user', user);
+  console.log('alumni', alumni);
   return (
     <div>
       <div>
-        {cohort.map((item) => (
+        {/* {cohort.map((item) => (
           <div key={item.id}>
             <div className="font-bold text-4xl uppercase text-center">
               {item.name}
@@ -67,7 +68,26 @@ export default function YearbookList() {
               </div>
             </div>
           </div>
-        ))}
+        ))} */}
+        <div className="font-bold text-4xl uppercase text-center">
+          {alumni.name}
+        </div>
+        <div className="w-full px-10 pt-10">
+          <div className="container mx-auto">
+            <div
+              role="list"
+              aria-label=""
+              className="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around"
+            >
+              <div
+                role="listitem"
+                className="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5"
+              >
+                <YearbookCard alumni={alumni} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       {/* <YearbookCard user={user} /> */}
       <div>
