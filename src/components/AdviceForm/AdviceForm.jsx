@@ -12,12 +12,50 @@ export default function () {
                   <label className="block font-bold mb-2 text-lg">Title</label>
                   <input
                     className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id="firstName"
-                    name="first_name"
-                    placeholder="First Name"
-                    value={formState.first_name}
+                    id="adviceTitle"
+                    name="advice_title"
+                    placeholder="Enter Title"
                   />
                 </section>
+
+                <section>
+                  <label className="block font-bold mb-2 text-lg">Advice</label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="advice"
+                    name="advice"
+                    placeholder="Advice for current students"
+                  />
+                </section>
+
+                <section>
+                  <label className="block font-bold mb-2 text-lg">
+                    Your Name
+                  </label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="alumni_name"
+                    name="alumni_name"
+                    placeholder="What's your name"
+                  />
+                </section>
+
+                <section>
+                  <label className="block font-bold mb-2 text-lg">Cohort</label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-1 px-1 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="cohort"
+                    name="cohort"
+                    placeholder="What cohort were you apart of ? "
+                  />
+                </section>
+
+                <button
+                  type="submit"
+                  className="bg-purple text-white hover:bg-darkerpurple py-0.3 font-bold rounded focus:outline-none focus:shadow-outline p-2 mt-8"
+                >
+                  Share Advice
+                </button>
               </div>
             </div>
           </div>
