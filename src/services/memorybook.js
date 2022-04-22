@@ -12,6 +12,7 @@ export const createMemory = async ({
   audio,
   text,
   resource_url,
+  name,
 }) => {
   const res = await fetch(`${process.env.API_URL}/api/v1/memorybook`, {
     method: 'POST',
@@ -24,6 +25,7 @@ export const createMemory = async ({
       audio,
       text,
       resource_url,
+      name,
     }),
   });
   const data = await res.json();
