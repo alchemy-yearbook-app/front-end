@@ -1,9 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AlumTest({ advices }) {
   console.log('advices', advices);
   return (
     <div class="mx-auto container py-20 px-6">
+      <div className="w-full flex align-middle justify-center">
+        <Link to="/advice/create">
+          <button className="border-2 p-2 py-0.3 text-white font-bold rounded focus:outline-none focus:shadow-outline bg-purple hover:bg-darkerpurple">
+            Share Advice
+          </button>
+        </Link>
+      </div>
       {advices.map((advice) => (
         <div key={advice.id}>
           <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

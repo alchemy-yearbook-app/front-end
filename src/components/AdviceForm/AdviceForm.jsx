@@ -1,8 +1,10 @@
 import React from 'react';
+import { Redirect, useHistory } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { createAdvice } from '../../services/advice';
 
 export default function () {
+  const history = useHistory();
   const { formState, handleForm, setFormState, setFormError, formError } =
     useForm({
       // avatar: '',
@@ -16,13 +18,13 @@ export default function () {
     e.preventDefault();
     const { title, advice, alumniName, cohort } = formState;
     try {
-      const resp = await createAdvice({
+      await createAdvice({
         title,
         advice,
         alumniName,
         cohort,
       });
-      return resp;
+      history.push('/advice');
     } catch (error) {
       throw error;
     }
