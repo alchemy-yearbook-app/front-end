@@ -14,17 +14,8 @@ export default function Home() {
           <h1 className="uppercase font-black leading-none tracking-wider mb-6 text-5xl lg:text-6xl xl:text-8xl">
             book
           </h1>
-          <p className="text-gray font-roboto text-lg sm:w-2/3 lg:w-1/2">
-            Where software developers are built and memories are made
-          </p>
-          <div className="mt-12 absolute">
-            <a
-              href="/yearbook"
-              className="border-black border-8 text-4xl font-bold p-4 hover:text-white hover:border-white"
-            >
-              ENTER
-            </a>
-          </div>
+
+          <div className="mt-12 absolute"></div>
         </div>
         <div className="sm:w-1/2 lg:w-2/3 absolute sm:absolute my-auto right-0 align-middle sm:block hidden mr-16">
           <h3 className="monteserrat font-black text-white absolute top-0 left-0 mt-32 sm:mt-32 lg:mt-56 ml-0 lg:ml-12 z-30 text-xl sm:text-3xl lg:text-4xl xl:text-5xl transform rotate-90"></h3>
