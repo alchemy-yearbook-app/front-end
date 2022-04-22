@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function YearbookCard({ yourTeamProfiles }) {
+  console.log('yourTeamProfiles :>> ', yourTeamProfiles);
   return (
     <>
       {yourTeamProfiles.map((item) => (
