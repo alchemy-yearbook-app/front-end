@@ -4,7 +4,6 @@ import Button from '../Button/Button';
 
 export default function Navbar() {
   const { user } = useUser();
-  console.log('user', user);
 
   return (
     <nav className="bg-darkerpurple w-100 px-32 md:px-auto mb-12">

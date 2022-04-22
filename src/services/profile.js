@@ -1,15 +1,12 @@
-export const getProfileById = async ({ user_id }) => {
+export const getProfileById = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.API_URL}/api/v1/profile/${user_id}`,
-      {
-        method: 'GET',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    const res = await fetch(`${process.env.API_URL}/api/v1/profile/${id}`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     return res.json();
   } catch (error) {
     console.log('error', error);
@@ -28,7 +25,6 @@ export const createProfile = async ({
   email,
   pronoun,
 }) => {
-
   const res = await fetch(`${process.env.API_URL}/api/v1/profile/create`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -85,15 +81,12 @@ export const updateProfile = async ({
 };
 
 export const deleteProfile = async (id) => {
-  const res = await fetch(
-    `${process.env.API_URL}/api/v1/profile/${profile.id}`,
-    {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      mode: 'cors',
-    }
-  );
+  const res = await fetch(`${process.env.API_URL}/api/v1/profile/${id}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+  });
 
   return res.ok;
 };
