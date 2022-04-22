@@ -10,7 +10,6 @@ export default function Button() {
   const handleSignOut = async () => {
     await signOut();
     history.replace('/');
-    window.location.reload();
   };
 
   return (
