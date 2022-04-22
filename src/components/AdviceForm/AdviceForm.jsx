@@ -24,7 +24,7 @@ export default function () {
         alumniName,
         cohort,
       });
-      history.push('/advice');
+      history.replace('/advice');
     } catch (error) {
       throw error;
     }
