@@ -16,17 +16,17 @@ export default function MemoryForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { cohortId, imageUrl, audio, text, resource_url } = formState;
+    const { cohortId, imageUrl, audio, text, resource_url, name } = formState;
     try {
-      const resp = await createMemory({
+      await createMemory({
         cohortId,
         imageUrl,
         audio,
         text,
         resource_url,
+        name,
       });
       history.replace('/memorybook');
-      return resp;
     } catch (error) {
       throw error;
     }
@@ -39,7 +39,7 @@ export default function MemoryForm() {
           <div className="relative py-16 m-auto">
             <div className="relative container px-6 text-gray-500 md:px-12 xl:px-40 m-auto">
               <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
-                <form className="bg-white shadow-md py-4 px-4 max-h-10.4 max-w-sm rounded-lg m-auto">
+                <div className="bg-white shadow-md py-4 px-4 max-h-10.4 max-w-sm rounded-lg m-auto">
                   <legend className="font-bold "></legend>
                   <section>
                     <label className="block font-bold mb-2 text-lg">
@@ -96,7 +96,7 @@ export default function MemoryForm() {
                   >
                     Add Memory
                   </button>
-                </form>
+                </div>
               </div>
             </div>
           </div>
