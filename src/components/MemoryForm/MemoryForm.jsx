@@ -1,17 +1,18 @@
 import React from 'react';
 import { useForm } from '../../hooks/useForm';
 import { createMemory } from '../../services/memorybook';
+import { useHistory } from 'react-router-dom';
 
 export default function MemoryForm() {
-  const { formState, handleForm, setFormState, setFormError, formError } =
-    useForm({
-      cohortId: '',
-      imageUrl: '',
-      audio: '',
-      text: '',
-      resource_url: '',
-      name: '',
-    });
+  const history = useHistory();
+  const { formState, handleForm } = useForm({
+    cohortId: '',
+    imageUrl: '',
+    audio: '',
+    text: '',
+    resource_url: '',
+    name: '',
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ export default function MemoryForm() {
         text,
         resource_url,
       });
+      history.replace('/memorybook');
       return resp;
     } catch (error) {
       throw error;
