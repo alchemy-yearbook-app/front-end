@@ -15,7 +15,7 @@ export const getCurrentUser = async () => {
 };
 
 export const signOut = async () => {
-  const res = await fetch(`${process.env.API_URL}/api/v1/user`, {
+  const res = await fetch(`${process.env.API_URL}/api/v1/github/sessions`, {
     method: 'DELETE',
     credentials: 'include',
     mode: 'cors',

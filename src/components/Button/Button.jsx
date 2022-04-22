@@ -1,17 +1,16 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useUser } from '../../context/UserContext';
-// import { signOutUser } from '../../services/users';
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { signOut } from '../../services/users';
 
 export default function Button() {
   const { id } = useParams();
   const history = useHistory();
 
   const handleSignOut = async () => {
-    await signOutUser();
+    await signOut();
     history.replace('/');
     window.location.reload();
   };
