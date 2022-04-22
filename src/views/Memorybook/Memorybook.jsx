@@ -31,7 +31,6 @@ export default function Memorybook() {
   if (loading) {
     return <h3></h3>;
   }
-  console.log('memorybook', memorybook);
   return (
     <div>
       <div className="w-full flex align-middle justify-center">
