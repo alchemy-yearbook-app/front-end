@@ -41,7 +41,7 @@ export default function Button() {
               <Menu.Item>
                 {({ active }) => (
                   <a
-                    href="/profile"
+                    href="/profile/"
                     className={`${
                       active ? 'text-teal' : 'text-white'
                     } group flex rounded-md items-center w-full px-2 py-2 text-md`}
