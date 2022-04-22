@@ -18,7 +18,6 @@ import AlumAdviceCreate from './views/AlumAdviceCreate/AlumAdviceCreate';
 
 import Profile from './views/Profile/Profile';
 
-
 function App() {
   return (
     <Router>

@@ -23,9 +23,9 @@ export default function Profile() {
     history.push('/yearbook/');
   };
 
-  if (loading) {
-    return <div></div>;
-  }
+  // if (loading) {
+  //   return <div></div>;
+  // }
 
   return (
     <div>
