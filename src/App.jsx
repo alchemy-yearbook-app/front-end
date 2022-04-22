@@ -51,22 +51,12 @@ function App() {
           <Route exact path="/advice/create">
             <AlumAdviceCreate />
           </Route>
-          <PrivateRoute exact path="/profile/:id/edit">
-            <ProfileCreateEdit isEditing />
-          </PrivateRoute>
-          {/* <PrivateRoute exact path="/profile/:id/edit">
-            <YearCreateEdit isEditing />
-          </PrivateRoute> */}
           <Route exact path="/memorybook">
             <Memorybook />
           </Route>
           <Route exact path="/memorybook/create">
             <MemCreateEdit />
           </Route>
-          {/* <PrivateRoute exact path="/memorybook/:id/edit">
-
-            <MemCreateEdit isEditing />
-          </PrivateRoute> */}
           <Route exact path="/about">
             <About />
           </Route>

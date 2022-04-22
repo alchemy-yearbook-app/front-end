@@ -2,20 +2,11 @@ import React, { useState, useEffect } from 'react';
 import ProfileForm from '../../components/ProfileForm/ProfileForm';
 import { updateProfile, createProfile } from '../../services/profile';
 import { getCurrentUser } from '../../services/users';
+import { useUser } from '../../context/UserContext';
 
 export default function ProfileCreateEdit({ isEditing = false }) {
-  const [user, setUser] = useState({});
+  const { user } = useUser();
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getCurrentUser();
-      setUser(data);
-      setLoading(true);
-    };
-    fetchData();
-    setLoading(false);
-  }, []);
 
   if (loading) {
     <h3>loading...</h3>;

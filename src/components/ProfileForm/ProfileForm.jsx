@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { useProfile } from '../../hooks/useProfile';
-import { getProfileById } from '../../services/profile';
+import { deleteProfile, getProfileById } from '../../services/profile';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { useUser } from '../../context/UserContext';
 
 // useUser hook (refactor later)
 export default function ProfileForm({ isEditing, onSubmit }) {
   const { id } = useParams();
-  const { profile, setProfile } = useProfile(id);
+  const { user } = useUser();
+  const { profile, setProfile } = useProfile(user.uuid);
   const history = useHistory();
   const { formState, handleForm, setFormState, setFormError, formError } =
     useForm({
@@ -28,7 +30,6 @@ export default function ProfileForm({ isEditing, onSubmit }) {
   }, [profile]);
 
   console.log('profile', profile);
-  console.log('id', id);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const {
@@ -56,7 +57,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
           email,
           pronoun,
         });
-        const resp = await getProfileById(id);
+        const resp = await getProfileById(user.uuid);
         setProfile(resp);
         history.replace(`/cohort`);
       } else {
@@ -71,7 +72,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
           email,
           pronoun,
         });
-        history.replace(`/yearbook`);
+        history.replace(`/cohort`);
       }
     } catch (error) {
       setFormError('Error please try again');
@@ -80,7 +81,7 @@ export default function ProfileForm({ isEditing, onSubmit }) {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    await deleteJob(id);
+    await deleteProfile(user.uuid);
     history.replace('/profile');
   };
 
