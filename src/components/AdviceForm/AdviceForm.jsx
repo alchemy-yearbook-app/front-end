@@ -1,18 +1,16 @@
 import React from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { createAdvice } from '../../services/advice';
 
-export default function () {
+export default function AdviceForm() {
   const history = useHistory();
-  const { formState, handleForm, setFormState, setFormError, formError } =
-    useForm({
-      // avatar: '',
-      title: '',
-      advice: '',
-      alumniName: '',
-      cohort: '',
-    });
+  const { formState, handleForm } = useForm({
+    title: '',
+    advice: '',
+    alumniName: '',
+    cohort: '',
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +24,7 @@ export default function () {
       });
       history.replace('/advice');
     } catch (error) {
+      console.log('error', error);
       throw error;
     }
   };
