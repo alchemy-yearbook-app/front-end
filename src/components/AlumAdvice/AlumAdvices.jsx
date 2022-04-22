@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function AlumTest({ advices }) {
-  console.log('advices', advices);
+export default function AlumAdvices({ advices }) {
   return (
     <div class="mx-auto container py-20 px-6">
       <div className="w-full flex align-middle justify-center">

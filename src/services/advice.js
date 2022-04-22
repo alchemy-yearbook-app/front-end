@@ -11,7 +11,6 @@ export const createAdvice = async ({ title, advice, alumniName, cohort }) => {
       cohort,
     }),
   });
-  console.log('res.json()', res.json());
   const data = await res.json();
   return data;
 };
@@ -25,7 +24,6 @@ export const getAdvice = async () => {
       mode: 'cors',
     });
     const advice = await res.json();
-    console.log('advice', advice);
     return advice;
   } catch (error) {
     return null;
