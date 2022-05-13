@@ -19,7 +19,7 @@
 
 ## Planning
 
-Check out our [Miro board](https://miro.com/app/board/uXjVOJ2lcbg=/?share_link_id=408822095430)
+Check out our [Miro board](https://miro.com/app/board/uXjVO-QZ-PQ=/?share_link_id=749603056761)
 
 ## Libraries, Frameworks, Tools used:
 * React
