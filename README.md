@@ -1,7 +1,7 @@
 # Alchemy Yearbook
 
 ## *An app that bridges the gap in alumni networking for Alchemy students.*
-![Alchemy Yearbook Title Page]
+![Alchemy Yearbook Title Page](./yearbook.png)
 
 # Team Members
 
