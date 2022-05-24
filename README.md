@@ -1,44 +1,34 @@
-# adv-react-tailwind-template
+# Alchemy Yearbook
 
-This template is a modified version of our [React
-Template](https://github.com/alchemycodelab/react-template). It provides a way
-to use [Tailwind CSS](https://tailwindcss.com/) classes for styling React
-components by using just `className`s and no custom CSS.
+## *An app that bridges the gap in alumni networking for Alchemy students.*
+![Alchemy Yearbook Title Page](./yearbook.png)
 
-## Getting Started
+# Team Members
 
-Click "Use this template" to create a new repo with your user as the owner. Then
-clone down the newly created repo and get hacking!
+## Kevin Do
+[LinkedIn](https://www.linkedin.com/in/kdo/) [GitHub](https://github.com/kevindo1) [Portfolio](https://kevindo.dev)
 
-## Differences from the [React Template](https://github.com/alchemycodelab/react-template)
+## Indiana H. Holdsworth
+[LinkedIn](https://www.linkedin.com/in/h-indiana-holdsworth/) [GitHub](https://github.com/H-Indiana-Holdsworth)
 
-Currently, this template only supports [CSS
-modules](https://css-tricks.com/css-modules-part-1-need/) if the CSS filename
-matches `*.module.css`. What this means is that when you want to use custom
-styles for a component — and you don't want those styles applied globally —
-you'll need to create a `MyComponent.module.css` file, import it, and then use
-the CSS class names as the properties of your imported stylesheet in your JSX:
+## Mira Kinebuchi
+[LinkedIn](https://www.linkedin.com/in/mira-kinebuchi/) [GitHub](https://github.com/mira-kine)
 
-### Tailwind Template
+## Mark Voltaire
+[LinkedIn](https://www.linkedin.com/in/mark-voltaire/) [GitHub](https://github.com/markjvoltaire)
 
-```css
-/* MyComponent.module.css */
-.myCustomCssClass {
- font-family: monospace;
-}
-```
+## Planning
 
-```js
-// MyComponent.jsx
-import styles from './MyComponent.module.css'
+Check out our [Miro board](https://miro.com/app/board/uXjVO-QZ-PQ=/?share_link_id=749603056761)
 
-export default function MyComponent() {
-  return (
-    <h1 className={`text-white ${styles.myCustomCssClass}`}>
-      Hello, World!
-    </h1>
-  );
-}
-
-```
-hello
+## Libraries, Frameworks, Tools used:
+* React
+* React-Router-Dom
+* Express
+* Node
+* Netlify
+* Heroku
+* PostgreSQL
+* GitHub API
+* Postman
+* Tailwind CSS
