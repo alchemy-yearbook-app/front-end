@@ -2,5 +2,5 @@
   Example of using Tailwind classes in a CSS file:
 */
 body {
-  @apply bg-slate-800;
+  @apply bg-darkpurple;
 }
